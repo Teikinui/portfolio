@@ -1,4 +1,4 @@
-import Menu from '../Menu/Menu';
+import Section from '../components/Section';
 import styles from './Parcours.module.css';
 
 const experiences = [
@@ -7,9 +7,10 @@ const experiences = [
     role: 'Technicien en sécurité opérationnelle',
     organization: 'Gouvernement de la Polynésie française',
     details: [
-      'Déploiement d’une architecture Cloudflare Zero Trust pour sécuriser les accès distants.',
-      'Maintien en condition opérationnelle et analyse des alertes EDR et SOC.',
-      'Sensibilisation des utilisateurs à la sécurité via des campagnes de phishing.',
+      'Gestion des accès Cloudflare Zero Trust et participation à la migration d’applications locales pour plus de 3 000 utilisateurs.',
+      'Développement, adaptation et déploiement de scripts PowerShell via Microsoft Intune.',
+      'Sécurisation des accès distants, traitement des tickets GLPI et analyse des alertes HarfangLab EDR et SOC.',
+      'Sensibilisation des utilisateurs à la cybersécurité par des campagnes de phishing.',
     ],
   },
   {
@@ -17,8 +18,8 @@ const experiences = [
     role: 'Technicien support N1 / N2',
     organization: 'Chang Sang Consulting',
     details: [
-      'Résolution d’incidents utilisateurs et interventions de dépannage sur site.',
-      'Préparation d’un serveur VMware avec NAS Synology et switch Cisco.',
+      'Diagnostic et résolution d’incidents N1/N2 dans GLPI, dépannage et installations sur site.',
+      'Préparation d’un serveur VMware avec NAS Synology et commutateur Cisco.',
     ],
   },
   {
@@ -26,26 +27,20 @@ const experiences = [
     role: 'Technicien administrateur réseau',
     organization: 'Électricité de Tahiti',
     details: [
-      'Mise en place d’un serveur Rundeck sous Red Hat.',
-      'Amélioration de scripts PowerShell pour leur intégration à Rundeck.',
+      'Mise en place d’un serveur Rundeck sous Red Hat et adaptation de scripts d’administration pour leur automatisation.',
     ],
   },
 ];
 
 export default function Parcours() {
   return (
-    <div className={styles.page}>
-      <header><Menu /></header>
-      <main className={styles.main}>
-        <section aria-labelledby="parcours-title">
-          <p className={styles.eyebrow}>Expériences & formation</p>
-          <h1 id="parcours-title">Mon parcours</h1>
+    <Section id="experience" eyebrow="03 / Expériences & formation" title="Mon parcours" intro="Du support aux infrastructures sécurisées, apprendre en faisant.">
           <div className={styles.timeline}>
             {experiences.map((experience) => (
               <article className={styles.item} key={experience.role}>
                 <p className={styles.period}>{experience.period}</p>
                 <div>
-                  <h2>{experience.role}</h2>
+                  <h3>{experience.role}</h3>
                   <p className={styles.organization}>{experience.organization}</p>
                   <ul>{experience.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
                 </div>
@@ -53,13 +48,11 @@ export default function Parcours() {
             ))}
           </div>
           <section className={styles.education} aria-labelledby="education-title">
-            <p className={styles.eyebrow}>Formation</p>
-            <h2 id="education-title">Apprendre et progresser</h2>
-            <p><strong>EPITECH Paris</strong> · Master of Science Cloud · 2026 — en cours</p>
+            <p className="eyebrow">Formation</p>
+            <h3 id="education-title">Apprendre et progresser</h3>
+            <p><strong>EPITECH Paris</strong> · Master of Science Cloud · sept. 2026 — en cours · fin prévisionnelle en 2029</p>
             <p><strong>BTS SIO, option SISR</strong> · Collège Lycée La Mennais, Tahiti · 2022 — 2024</p>
           </section>
-        </section>
-      </main>
-    </div>
+    </Section>
   );
 }

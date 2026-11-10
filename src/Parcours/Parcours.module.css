@@ -1,14 +1,12 @@
-.main { width: min(100% - 3rem, 76rem); margin: 0 auto; padding: clamp(3rem, 8vw, 6rem) 0; }
-.eyebrow { margin: 0 0 0.65rem; color: var(--color-accent); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-.main h1 { margin: 0 0 3rem; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 400; letter-spacing: -0.04em; }
-.timeline { border-top: 1px solid var(--color-line); }
-.item { display: grid; grid-template-columns: minmax(10rem, 0.7fr) 2fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--color-line); }
-.period, .organization { margin: 0; color: var(--color-muted); font-size: 0.88rem; }
-.item h2, .education h2 { margin: 0 0 0.45rem; font-family: Georgia, 'Times New Roman', serif; font-size: 1.45rem; font-weight: 400; }
-.item ul { display: grid; gap: 0.5rem; margin: 1rem 0 0; padding-left: 1.2rem; color: var(--color-muted); line-height: 1.65; }
-.education { display: grid; gap: 0.65rem; margin-top: 3.5rem; }
-.education h2 { margin-bottom: 0.5rem; font-size: 1.8rem; }
-.education > p:not(.eyebrow) { margin: 0; color: var(--color-muted); line-height: 1.7; }
-.education strong { color: var(--color-accent); }
-@media (max-width: 680px) { .main { width: min(100% - 2rem, 76rem); } .item { grid-template-columns: 1fr; gap: 0.7rem; padding: 1.5rem 0; } }
-@media (max-width: 380px) { .main h1 { font-size: 2.45rem; } .item h2 { font-size: 1.3rem; } }
+.timeline { margin-top: 2.5rem; }
+.item { position: relative; display: grid; grid-template-columns: 210px 1fr; gap: 2rem; padding: 0 0 2.8rem 1.5rem; border-left: 1px solid var(--color-line); }
+.item::before { content: ''; position: absolute; top: .5rem; left: -5px; width: 9px; height: 9px; border-radius: 50%; background: var(--color-accent); box-shadow: 0 0 0 5px var(--color-paper); }
+.period { color: var(--color-muted); font-size: .8rem; margin-top: .4rem; }
+.item h3 { margin: 0 0 .6rem; font-size: 1.2rem; font-weight: 550; }
+.organization { color: var(--color-accent); font-size: .85rem; margin: 0 0 1rem; }
+.item ul { margin: 0; padding-left: 1.1rem; color: var(--color-muted); font-size: .88rem; line-height: 1.9; }
+.education { padding: 1.8rem 2rem; border: 1px solid var(--color-line); background: var(--color-surface); border-radius: 12px; }
+.education h3 { font-size: 1.2rem; font-weight: 550; }
+.education > p:not(:first-child) { font-size: .88rem; line-height: 1.8; color: var(--color-muted); }
+.education strong { color: var(--color-ink); font-weight: 550; }
+@media (max-width: 700px) { .item { grid-template-columns: 1fr; gap: .5rem; } .education { padding: 1.3rem; } }

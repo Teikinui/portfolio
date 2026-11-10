@@ -5,7 +5,7 @@ export default function Card({ title, text, image }) {
     <article className={styles.card}>
       {image && <img className={styles.image} src={image} alt="" />}
       <div className={styles.content}>
-        <h3>{title}</h3>
+        <h4>{title}</h4>
         <p>{text}</p>
       </div>
     </article>

@@ -1,35 +1,38 @@
-import Menu from '../Menu/Menu';
-import NavLink from '../components/NavLink/NavLink';
+import { m, useReducedMotion } from 'framer-motion';
 import styles from './Accueil.module.css';
 
 export default function Accueil() {
-    return (
-    <div className={styles.page}>
-      <header className={styles.header}><Menu /></header>
-      <main className={styles.main}>
-        <section className={styles.hero} aria-labelledby="home-title">
-          <div className={styles.copy}>
-            <p className={styles.eyebrow}><span /> Master of Science Cloud · EPITECH Paris</p>
-            <h1 id="home-title">Construire des infrastructures <span>fiables et utiles.</span></h1>
-            <p className={styles.description}>Bonjour, moi c’est Teikinui. Je m’intéresse au cloud, aux systèmes et à la sécurité — avec l’envie de comprendre comment les choses fonctionnent, puis de les améliorer.</p>
-            <div className={styles.actions}>
-              <NavLink to="/projets">Découvrir mes projets <span aria-hidden="true">↗</span></NavLink>
-              <NavLink to="/contact">Me contacter</NavLink>
-              <a className={styles.downloadLink} href={`${import.meta.env.BASE_URL}CV/Teikinui_DECIAN_CLOUD_CV.pdf`} download="Teikinui_Decian_CV.pdf">
-                Télécharger mon CV <span aria-hidden="true">↓</span>
-              </a>
-            </div>
-            <p className={styles.note}>Actuellement en recherche d’une alternance DevOps / Infrastructure Cloud — janvier 2027.</p>
-          </div>
-          <figure className={styles.portrait}>
-            <img src={`${import.meta.env.BASE_URL}photo_profil.jpeg`} alt="Portrait de Teikinui Decian" />
-            <figcaption><span>Teikinui Decian</span><span>Étudiant Cloud · EPITECH</span></figcaption>
-          </figure>
-        </section>
-        <section className={styles.highlights} aria-label="Domaines d’intérêt">
-          <span>01 / Cloud & infrastructure</span><span>02 / Systèmes & réseaux</span><span>03 / Sécurité</span>
-        </section>
-      </main>
-    </div>
-    );
+  const reduceMotion = useReducedMotion();
+  return (
+    <section id="accueil" className={`${styles.hero} container`} aria-labelledby="home-title" tabIndex={-1}>
+      <m.div className={styles.copy} initial={reduceMotion ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .55 }}>
+        <p className={styles.availability}><span aria-hidden="true" /> Alternance · Janvier 2027 · 2 à 3 ans</p>
+        <p className="eyebrow">Bonjour, moi c’est Teikinui.</p>
+        <h1 id="home-title">Construire des infrastructures <em>fiables et utiles.</em></h1>
+        <p className={styles.description}>Étudiant en Master of Science Cloud à EPITECH Paris, je recherche une alternance en infrastructure cloud, avec pour objectif de devenir architecte cloud. Je m’intéresse aux systèmes, à la sécurité et à l’automatisation.</p>
+        <div className="actions">
+          <a className="button" href="#projets">Découvrir mes projets <span aria-hidden="true">↗</span></a>
+          <a className="button button-secondary" href={`${import.meta.env.BASE_URL}CV/CV_Teikinui_DECIAN_Cloud.pdf`} download="CV_Teikinui_DECIAN_Cloud.pdf">Mon CV <span aria-hidden="true">↓</span></a>
+        </div>
+        <div className={styles.socials} aria-label="Me retrouver">
+          <a href="https://github.com/teikinui" target="_blank" rel="noopener noreferrer">GitHub ↗<span className="sr-only"> (nouvel onglet)</span></a>
+          <a href="https://www.linkedin.com/in/teikinui-decian" target="_blank" rel="noopener noreferrer">LinkedIn ↗<span className="sr-only"> (nouvel onglet)</span></a>
+          <a href="mailto:teikinui.decian@gmail.com">E-mail ↗</a>
+        </div>
+      </m.div>
+      <div className={styles.visual}>
+        <span className={styles.orbit} aria-hidden="true" />
+        <figure className={styles.portrait}>
+          <img src={`${import.meta.env.BASE_URL}photo_profil.webp`} alt="Portrait de Teikinui Decian" width="640" height="794" fetchPriority="high" />
+          <figcaption><strong>Teikinui Decian</strong><span>Cloud · Infrastructure · Sécurité</span></figcaption>
+        </figure>
+        <span className={styles.caption} aria-hidden="true">Curieux par nature. Technique par passion.</span>
+      </div>
+      <div className={styles.highlights} aria-label="Domaines d’intérêt">
+        <span><small>01 /</small> Cloud & infrastructure</span>
+        <span><small>02 /</small> Systèmes & réseaux</span>
+        <span><small>03 /</small> Sécurité</span>
+      </div>
+    </section>
+  );
 }

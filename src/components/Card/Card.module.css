@@ -1,3 +1,4 @@
-.card { min-height: 11rem; padding: clamp(1.25rem, 3vw, 2rem); background: var(--color-surface); }
-.content h3 { margin: 0 0 0.75rem; font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; font-weight: 400; }
-.content p { margin: 0; color: var(--color-muted); font-size: 0.93rem; line-height: 1.7; }
+.card { border-left: 2px solid var(--color-line); padding-left: 1rem; }
+.content h4 { font-size: .9rem; font-weight: 550; margin: 0 0 .6rem; }
+.content p { font-size: .85rem; color: var(--color-muted); line-height: 1.8; margin: 0; }
+.image { width: 100%; height: auto; }
