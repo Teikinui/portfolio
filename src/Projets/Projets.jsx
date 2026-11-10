@@ -22,7 +22,7 @@ const projects = [
     type: 'Projet académique · Fullstack', technologies: ['React', 'JavaScript', 'FastAPI', 'Python'],
     description: 'Conception d’un job board de A à Z en équipe : j’ai développé le frontend avec React et le projet utilisait une API FastAPI. Notre équipe a remporté le prix de la meilleure présentation.',
     nodes: ['Frontend React', 'API FastAPI', 'Présentation primée'],
-    demo: null, github: null,
+    demo: null, github: 'https://github.com/Teikinui/projet-jobboard.git',
   },
 ];
 const filters = ['Tous', ...new Set(projects.flatMap((project) => project.technologies))];
