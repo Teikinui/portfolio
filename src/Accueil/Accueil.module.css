@@ -18,7 +18,20 @@
 }
 .copy h1 span { color: var(--color-accent); }
 .description { max-width: 56ch; color: var(--color-muted); font-size: 16px; line-height: 1.75; margin: 0; }
-.availability { display: inline-flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-3); border: 1px solid var(--color-line); border-radius: var(--radius-sm); font-size: 13px; line-height: 1.5; margin: 0 0 var(--space-5); }
+.availability {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  line-height: 1.5;
+  text-wrap: balance;
+  margin: 0 0 var(--space-5);
+}
 .availability > span { flex: 0 0 6px; height: 6px; border-radius: 50%; background: var(--color-status); animation: available 2.4s ease-out 2; }
 .socials { display: flex; flex-wrap: wrap; gap: var(--space-5); margin-top: var(--space-3); font-size: 14px; }
 .socials a { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-muted); }
