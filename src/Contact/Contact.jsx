@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import Section from '../components/Section';
+import Icon from '../components/Icon';
 import styles from './Contact.module.css';
 
 export default function Contact() {
@@ -31,9 +32,9 @@ export default function Contact() {
         <div className={styles.profile}>
           <p className={styles.note}>À la recherche d’une alternance en infrastructure cloud à partir de <strong>janvier 2027</strong> (2 à 3 ans), avec un objectif d’évolution vers l’architecture cloud.</p>
           <div className={styles.links}>
-            <a href="mailto:teikinui.decian@gmail.com">teikinui.decian@gmail.com <span aria-hidden="true">↗</span></a>
-            <a href="https://www.linkedin.com/in/teikinui-decian" target="_blank" rel="noopener noreferrer">Mon profil LinkedIn <span aria-hidden="true">↗</span><span className="sr-only"> (nouvel onglet)</span></a>
-            <a href={`${import.meta.env.BASE_URL}CV/CV_Teikinui_DECIAN_Cloud.pdf`} download="CV_Teikinui_DECIAN_Cloud.pdf">Télécharger mon CV <span aria-hidden="true">↓</span></a>
+            <a href="mailto:teikinui.decian@gmail.com">teikinui.decian@gmail.com <Icon /></a>
+            <a href="https://www.linkedin.com/in/teikinui-decian" target="_blank" rel="noopener noreferrer">Mon profil LinkedIn <Icon /><span className="sr-only"> (nouvel onglet)</span></a>
+            <a href={`${import.meta.env.BASE_URL}CV/CV_Teikinui_DECIAN_Cloud.pdf`} download="CV_Teikinui_DECIAN_Cloud.pdf">Télécharger mon CV <Icon name="download" /></a>
           </div>
           <p className={styles.privacy}>Ce formulaire ne transmet et ne stocke aucune donnée. Il prépare un e-mail à envoyer depuis votre messagerie.</p>
         </div>
@@ -55,12 +56,12 @@ export default function Contact() {
             {errors.message && <p className={styles.error} id="message-error">{errors.message}</p>}
           </div>
           <p className={styles.help} id="form-help">Aucun envoi automatique : vous confirmerez l’envoi dans votre application e-mail.</p>
-          <button className="button" type="submit">Préparer le message <span aria-hidden="true">↗</span></button>
+          <button className="button" type="submit">Préparer le message <Icon /></button>
           <div aria-live="polite" aria-atomic="true">
             {Object.keys(errors).length > 0 && <p className={styles.error}>Veuillez corriger les champs indiqués.</p>}
             {draft && <div className={styles.confirmation}>
               <p><strong>Votre message est prêt.</strong> Aucun e-mail n’a encore été envoyé. Ouvrez votre messagerie, puis confirmez l’envoi depuis celle-ci.</p>
-              <a className="button button-secondary" href={draft}>Ouvrir ma messagerie ↗</a>
+              <a className="button button-secondary" href={draft}>Ouvrir ma messagerie <Icon /></a>
               <p className={styles.help}>Si aucune application ne s’ouvre, écrivez directement à l’adresse ci-contre.</p>
             </div>}
           </div>

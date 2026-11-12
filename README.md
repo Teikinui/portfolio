@@ -1,15 +1,12 @@
 # Portfolio — Teikinui Decian
 
-Portfolio personnel construit avec React et Vite. Il présente mon profil, mes compétences, mon parcours, mes projets et les moyens de me contacter.
+Portfolio personnel React/Vite : profil, projets, compétences, parcours, CV et contact.
 
-**Portfolio en ligne :** [https://teikinui.github.io/portfolio/](https://teikinui.github.io/portfolio/)
+**En ligne :** [teikinui.github.io/portfolio](https://teikinui.github.io/portfolio/)
 
 ## Prérequis
 
-- [Git](https://git-scm.com/downloads) pour cloner le dépôt.
-- [Node.js](https://nodejs.org/) avec npm. Une version LTS récente est recommandée.
-
-Vérifier les installations dans un terminal :
+Git, Node.js LTS récent et npm.
 
 ```bash
 git --version
@@ -17,96 +14,61 @@ node --version
 npm --version
 ```
 
-## Télécharger le projet
-
-Cloner le dépôt GitHub, puis entrer dans le dossier créé :
+## Télécharger et démarrer
 
 ```bash
 git clone https://github.com/Teikinui/portfolio.git
 cd portfolio
-```
-
-Pour récupérer plus tard les dernières modifications du dépôt :
-
-```bash
-git pull
-```
-
-## Installer et démarrer le portfolio
-
-Depuis le dossier `portfolio`, installer les dépendances :
-
-```bash
 npm install
-```
-
-Démarrer ensuite le serveur de développement :
-
-```bash
 npm run dev
 ```
 
-Ouvrir dans le navigateur l’adresse affichée par Vite, généralement [http://localhost:5173/portfolio/](http://localhost:5173/portfolio/). Laisser le terminal ouvert pendant le développement ; arrêter le serveur avec `Ctrl+C`.
+Ouvrir l’adresse affichée par Vite, généralement `http://localhost:5173/portfolio/`. Laisser le terminal ouvert ; arrêter avec `Ctrl+C`. Après l’installation, seul `npm run dev` est nécessaire. Pour récupérer les mises à jour : `git pull`.
 
-Après le premier `npm install`, les démarrages suivants nécessitent uniquement `npm run dev`.
-
-## Vérifications
+## Vérifier et publier
 
 ```bash
 npm run lint
 npm run build
+npm run preview
+npm run deploy
 ```
 
-## Fonctionnement
+`deploy` reconstruit le site puis publie `dist` sur la branche `gh-pages` du remote `origin`. Le préfixe `/portfolio/` est conservé. Les anciennes routes React redirigent vers leur section.
 
-- Page à sections, navigation sticky et menu mobile ; les anciennes routes React redirigent vers leur section. Le préfixe Vite `/portfolio/` est conservé.
-- Palette beige déclinée en sombre (par défaut) et clair. Le choix est conservé dans `localStorage` lorsque le navigateur l’autorise.
-- Animations Framer Motion avec prise en compte de `prefers-reduced-motion`. Les CSS Modules existants sont conservés, sans ajouter de framework CSS.
-- Les projets se filtrent par technologie. Leurs aperçus sont des schémas de principe, pas des captures de services publics. Les URL de démo et de dépôt ne sont pas renseignées : ajouter les liens vérifiés dans `src/Projets/Projets.jsx` pour les afficher.
-- Le formulaire valide nom, e-mail et message, puis propose un lien `mailto:`. Aucun backend n’est configuré : la confirmation indique que le message est prêt, **pas qu’il a été envoyé**. L’envoi doit être confirmé dans une application e-mail configurée.
-- Le profil GitHub reprend le compte `teikinui` utilisé par l’URL de publication du dépôt ; LinkedIn et l’e-mail reprennent les coordonnées existantes.
-- Le portrait WebP (environ 36 Ko au lieu de 519 Ko) est utilisé à l’écran ; la photo originale et le CV sont conservés.
+## Direction visuelle et intégration Impeccable
 
-## Direction visuelle — Taste
+La refonte globale utilise **Impeccable 4.8.2 exclusivement** : couverture bleue, régions papier/beige en clair, surfaces encre en sombre, dossiers de projets, compétences en colonnes, parcours bleu et contact coordonné. Le contenu, les 24 titres, les liens et les fonctionnalités sont conservés. EPITECH Paris reste identifié par son nom réel, sans logo officiel inventé.
 
-Seule référence de design : [Taste 2.5.1](https://github.com/Leonxlnx/taste-skill), lu dans `.agents/skills/design-taste-frontend/SKILL.md` et ses références `system`, `layout-v4`, `motion`, `sections`, `copy`, `copy-voice` et `perf`. Ses principes sont transposés dans les CSS Modules existants, sans installer un second système CSS.
+- `PRODUCT.md` consigne les faits et contraintes.
+- `DESIGN.md` et `.impeccable/design.json` décrivent le système effectivement implémenté.
+- `.impeccable/surfaces/portfolio.md` consigne la composition et les limites de revue.
+- Installation utilisée : `npx impeccable install --providers=pi --scope=global --no-hooks --yes`. Le skill et son moteur restent dans le répertoire utilisateur, **pas dans le dépôt ni le bundle public**. En Pi, recharger les skills après installation.
+- Les consignes Hermes ont également été lues : pour une installation locale, Hermes exige `hermes skills trust` ; le hook optionnel s’active avec `hermes plugins enable impeccable-design-hook`. Aucun plugin Hermes n’est activé par ce projet.
+- Sans hook automatique Pi, un contrôle manuel Impeccable a été exécuté sur les sources et le rendu. Réserve conservée : Geist est signalée comme une police répandue ; six fins de paragraphes courtes sont signalées à titre consultatif. Aucune réserve de contraste bloquante détectée.
 
-- Palette beige, thème sombre initial, navbar sticky dépolie, données et fonctionnalités conservés.
-- Instrument Serif pour les titres et DM Sans pour le texte, deux fichiers WOFF2 locaux avec leurs licences OFL dans `public/fonts`. Aucune requête Google Fonts à l’exécution.
-- Corps de texte à 16 px minimum, métadonnées à 13 px minimum ; échelle commune d’espacement, rayons et interactions.
-- Portrait droit sans ornements inclinés ni légende visible ; nom conservé dans la légende accessible et la navigation.
-- Trois projets sur une rangée à grande largeur, cartes horizontales sur tablette et empilées sur téléphone ; compétences en trois colonnes sur desktop.
-- Entrée du hero, survol et pression discrets ; aucun contenu masqué au scroll. Les cartes sans lien ne se soulèvent pas. Le badge de disponibilité s’anime deux fois, puis s’arrête avant cinq secondes ; réduction des mouvements respectée.
+## Fonctionnement conservé
 
-Adaptations au périmètre : pas de nouveau contenu, de scène WebGL, de kit CSS/JS supplémentaire ou de section ajoutée. La navbar dépolie demandée et les hauteurs adaptées au contenu sont conservées plutôt que le gabarit Taste strict à hauteurs d’écran fixes. Cela ne constitue pas une conformité complète à son checker de gabarit.
+- Thème sombre initial, bascule clair/sombre et persistance `localStorage`, même si le stockage est bloqué.
+- Navigation sticky, menu mobile et fermeture par Échap, lien d’évitement et focus visible.
+- Trois projets filtrables par technologie. L’index du hero réinitialise le filtre puis rejoint le bon projet.
+- Les aperçus sont des schémas de principe, pas de fausses captures. Les URL manquantes restent explicitement non publiques/non renseignées ; le dépôt réel du job board est conservé.
+- Formulaire validant nom, e-mail et message, puis préparant un `mailto:`. **Aucun backend n’est configuré et aucun envoi n’est simulé.** L’envoi doit être confirmé dans l’application e-mail.
+- CV et photos conservés ; portrait WebP de 36 Kio, polices locales Geist et DM Sans, aucune requête de police externe à l’exécution.
+- Une entrée discrète du hero à contenu déjà visible, sans apparition répétitive des sections ; `prefers-reduced-motion` respecté.
 
-## Vérifications réalisées
+## Contrôles de la refonte
 
-### Après la passe Taste
-
-- `npm run build` : succès.
-- `npm exec eslint -- src vite.config.js eslint.config.js` : succès.
-- `npm run lint` : échec préexistant, 76 erreurs dans les fichiers du skill tiers sous `.agents/`. Diagnostics identiques avant et après les changements ; ni le kit ni la configuration ESLint n’ont été modifiés.
-- Tests Edge/Playwright sur le build : chargement des deux polices locales, lien d’évitement au clavier, thèmes persistants et stockage bloqué, filtres des trois projets, formulaire et lien `mailto:`, CV, portrait, ancienne route, menu et Échap, mouvement normal/réduit, survol des cartes liées seulement. Aucun échec ni erreur navigateur/ressource.
-- Captures et contrôles de débordement à 320, 390, 768, 820, 1 024 et 1 440 px, dans les deux thèmes : succès.
-- Axe WCAG A/AA sur desktop et mobile, dans les deux thèmes : aucune violation détectée ; pas une certification d’accessibilité.
-- Taste `shoot.mjs` : captures avant/après sur le build. Dernier passage de `perf.mjs` à 1 440 et 390 px : PASS, aucun FAIL ni WARN, environ 217 Kio transférés, deux polices (57 Kio), CLS mesuré à 0. Les mesures locales ne remplacent pas les données terrain.
-- Taste `consistency.mjs` : non concluant, connexions CDP interrompues puis délai maximal atteint, aucun rapport complet produit.
-- Taste `layout/check.mjs` : exécuté aux cinq formats prescrits, non validé. Il signale notamment les hauteurs non multiples d’un écran et les colonnes/retraits hors de son gabarit de kit ; aucune dérogation n’a été ajoutée pour faire passer ce contrôle.
-
-### Vérifications de la version précédente
-- Tests navigateur sur le build de production (Edge/Playwright) : thème et persistance, filtres, validation, préparation d’e-mail, chargement du portrait et du CV, redirection d’une ancienne route, menu mobile et touche Échap.
-- Absence de débordement horizontal aux largeurs 320, 375, 768, 1 024 et 1 440 px.
-- Audit automatisé axe WCAG A/AA : aucune violation détectée sur desktop clair et mobile sombre. Cela ne remplace pas un audit manuel complet.
-- `npm audit --omit=dev` : aucune vulnérabilité. L’audit complet signale 4 vulnérabilités modérées dans la chaîne ESLint/minimatch ; pas de mise à niveau majeure forcée de l’outillage.
+- `npm run lint` et `npm run build` : succès. ESLint exclut les ressources d’outils tiers dans `.agents` et les sorties `.impeccable`, pas le code de l’application.
+- Edge/Playwright sur le build : contenu des 24 titres inchangé, thèmes, stockage bloqué, filtres, ancres du hero après filtrage, erreurs et préparation du formulaire, CV PDF, portrait, ancienne route, menu mobile, Échap, focus et mouvement réduit/normal.
+- Largeurs 320, 375, 390, 600, 701, 768, 820, 1 024, 1 280 et 1 440 px, dans les deux thèmes : aucune coupure de titre, aucun débordement horizontal, badge sur une ligne.
+- Axe WCAG A/AA à 320, 390, 768 et 1 440 px, dans les deux thèmes : aucune violation détectée. Ce contrôle automatisé n’est pas une certification complète d’accessibilité.
+- Captures de revue dans `.impeccable/review/` (ignorées par Git). La revue finale est réalisée dans le fil principal, sans sous-agent.
 
 ## Structure
 
-- `src/Accueil` : présentation et page d’accueil
-- `src/Competences` : compétences techniques
-- `src/Parcours` : expériences et formation
-- `src/Projets` : projets personnels
-- `src/Contact` : coordonnées de contact
-- `src/Menu` : navigation partagée
-- `src/components` : composants réutilisables, notamment `Section.jsx` et `Card`
-- `public` : ressources statiques, dont la photo de profil
+- `src/Accueil`, `src/Projets`, `src/Competences`, `src/Parcours`, `src/Contact` : sections et CSS Modules.
+- `src/Menu` : navigation et thème.
+- `src/components` : Section, Card et iconographie SVG partagée.
+- `src/data/projects.js` : données réelles communes au hero et à la liste de projets.
+- `public` : photos, CV, favicon et polices locales avec licences.

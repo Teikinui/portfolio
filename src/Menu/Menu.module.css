@@ -1,26 +1,24 @@
-.header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--color-line); background: var(--color-glass); backdrop-filter: blur(18px); }
-.bar { display: flex; align-items: center; justify-content: space-between; min-height: var(--nav-height); gap: var(--space-5); }
-.logo { display: inline-flex; align-items: center; gap: var(--space-4); min-height: 44px; text-decoration: none; flex-shrink: 0; }
-.monogram { font-size: 26px; font-weight: 600; letter-spacing: -.08em; }
-.monogram > span { color: var(--color-accent); }
-.wordmark { font-size: 14px; font-weight: 500; letter-spacing: -.02em; }
-.nav { display: flex; align-items: center; gap: var(--space-5); }
-.nav a { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-muted); font-size: 14px; text-decoration: none; position: relative; transition: color 150ms var(--ease); }
-.nav a::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 150ms var(--ease); }
+.header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--color-line); background: var(--color-glass); }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: var(--nav-height); }
+.logo { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; min-height: 44px; text-decoration: none; }
+.monogram { font-family: var(--font-heading); font-size: 27px; line-height: 1; letter-spacing: -.04em; color: var(--color-accent); }
+.monogram > span { color: var(--color-muted); }
+.wordmark { display: flex; flex-direction: column; gap: 2px; font-size: 14px; font-weight: 500; }
+.wordmark small { color: var(--color-muted); font-size: 13px; font-weight: 400; }
+.nav { display: flex; align-items: center; gap: 24px; }
+.nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--color-muted); text-decoration: none; position: relative; transition: color 150ms var(--ease); }
+.nav a::after { content: ''; position: absolute; bottom: 3px; left: 0; right: 0; height: 2px; background: var(--color-accent); transform: scaleX(0); transform-origin: left; transition: transform 160ms var(--ease); }
 .nav a:hover, .nav a[aria-current] { color: var(--color-ink); }
 .nav a:hover::after, .nav a:focus-visible::after, .nav a[aria-current]::after { transform: scaleX(1); }
-.nav a[aria-current]::after { background: var(--color-accent); height: 2px; }
-.controls { display: flex; align-items: center; gap: var(--space-2); }
-.theme, .menuButton { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--color-line); border-radius: var(--radius-sm); background: transparent; color: var(--color-ink); cursor: pointer; min-height: 44px; min-width: 44px; transition: background-color 150ms var(--ease), border-color 150ms var(--ease); }
+.controls { display: flex; align-items: center; gap: 8px; }
+.theme, .menuButton { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid var(--color-line); border-radius: 4px; color: var(--color-ink); background: transparent; transition: border-color 150ms var(--ease), background-color 150ms var(--ease); }
 .theme:hover, .menuButton:hover { background: var(--color-surface); border-color: var(--color-accent); }
-.theme:active, .menuButton:active { background: var(--color-band); }
-.menuButton { display: none; gap: var(--space-2); padding: var(--space-2) var(--space-3); font-size: 14px; }
+.menuButton { display: none; gap: 8px; padding: 8px 12px; font-size: 14px; }
 @media (min-width: 801px) and (max-width: 1100px) { .wordmark { display: none; } }
 @media (max-width: 800px) {
   .menuButton { display: inline-flex; }
-  .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-paper); padding: var(--space-5); border-bottom: 1px solid var(--color-line); }
-  .nav.open { display: flex; flex-direction: column; align-items: stretch; gap: var(--space-2); }
-  .nav a { min-height: 48px; padding-inline: var(--space-3); font-size: 18px; }
-  .nav a::after { left: 12px; width: calc(100% - 24px); }
+  .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-paper); border-bottom: 1px solid var(--color-line); padding: 20px 24px; }
+  .nav.open { display: flex; flex-direction: column; align-items: stretch; gap: 8px; }
+  .nav a { font-size: 18px; min-height: 48px; }
 }
 @media (max-width: 420px) { .wordmark { display: none; } }

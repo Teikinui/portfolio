@@ -1,4 +1,4 @@
 .card { padding: 0; }
-.content h4 { margin: 0 0 var(--space-2); }
-.content p { font-size: 16px; line-height: 1.75; margin: 0; }
+.content h4 { margin: 0 0 8px; }
+.content p { color: var(--color-muted); font-size: 16px; line-height: 1.75; margin: 0; }
 .image { width: 100%; height: auto; }

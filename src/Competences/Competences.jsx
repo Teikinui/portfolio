@@ -25,7 +25,7 @@ export default function Competences() {
     <Section id="competences" eyebrow="02 / Savoir-faire" title="Mes compétences" intro="Des bases techniques acquises en formation et sur le terrain, que je continue à approfondir.">
       <div className={styles.categories}>
         {categories.map((category) => <div className={styles.category} key={category.title}>
-          <div className={styles.title}><span>{category.number}</span><h3>{category.title}</h3></div>
+          <div className={styles.title}><h3>{category.title}</h3></div>
           <div className={styles.cards}>{category.skills.map((skill) => <Card key={skill.title} {...skill} />)}</div>
         </div>)}
       </div>

@@ -1,15 +1,6 @@
-.categories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-7); }
-.category { min-width: 0; border-top: 1px solid var(--color-line); padding-top: var(--space-5); }
-.title { min-height: 132px; }
-.title > span { color: var(--color-accent); font-size: 13px; font-variant-numeric: tabular-nums; }
-.title h3 { margin: var(--space-4) 0 var(--space-6); max-width: 20ch; }
-.cards { display: grid; gap: var(--space-6); }
-@media (max-width: 1000px) {
-  .categories { grid-template-columns: 1fr; gap: var(--space-6); }
-  .category { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: var(--space-7); }
-  .title { min-height: 0; }
-}
-@media (max-width: 600px) {
-  .category { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .title h3 { max-width: none; margin-bottom: var(--space-5); }
-}
+.categories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; }
+.category { min-width: 0; border-top: 1px solid var(--color-line); padding-top: 24px; }
+.title h3 { margin: 0 0 32px; min-height: 2.5em; max-width: 24ch; }
+.cards { display: grid; gap: 28px; }
+@media (max-width: 1000px) { .categories { grid-template-columns: minmax(0, 1fr); gap: 40px; } .category { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 48px; } .title h3 { min-height: 0; } }
+@media (max-width: 600px) { .category { grid-template-columns: minmax(0, 1fr); gap: 0; } .title h3 { margin-bottom: 24px; max-width: none; } }

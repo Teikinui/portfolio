@@ -48,8 +48,8 @@ export default function Parcours() {
             ))}
           </div>
           <section className={styles.education} aria-labelledby="education-title">
-            <p className="eyebrow">Formation</p>
             <h3 id="education-title">Apprendre et progresser</h3>
+            <p>Formation</p>
             <p><strong>EPITECH Paris</strong> · Master of Science Cloud · sept. 2026 — en cours · fin prévisionnelle en 2029</p>
             <p><strong>BTS SIO, option SISR</strong> · Collège Lycée La Mennais, Tahiti · 2022 — 2024</p>
           </section>
