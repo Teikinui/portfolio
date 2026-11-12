@@ -7,7 +7,6 @@ export default function Accueil() {
     <section id="accueil" className={`${styles.hero} container`} aria-labelledby="home-title" tabIndex={-1}>
       <m.div className={styles.copy} initial={reduceMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .52, ease: [.22, 1, .36, 1] }}>
         <p className={styles.availability}><span aria-hidden="true" /> Alternance · Janvier 2027 · 2 à 3 ans</p>
-        <p className="eyebrow">Bonjour, moi c’est Teikinui.</p>
         <h1 id="home-title">Construire des infrastructures <span>fiables et utiles.</span></h1>
         <p className={styles.description}>Étudiant en Master of Science Cloud à EPITECH Paris, je recherche une alternance en infrastructure cloud, avec pour objectif de devenir architecte cloud. Je m’intéresse aux systèmes, à la sécurité et à l’automatisation.</p>
         <div className="actions">
