@@ -32,7 +32,7 @@ function Portfolio() {
       <footer className="site-footer container">
         <a href="#accueil" aria-label="Retour à l’accueil">TD<span>.</span></a>
         <p>© {new Date().getFullYear()} Teikinui Decian · Construit avec React.</p>
-        <a href="#accueil">Retour en haut ↑</a>
+        <a className="text-link" href="#accueil">Retour en haut ↑</a>
       </footer>
     </>
   );

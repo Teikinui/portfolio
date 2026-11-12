@@ -37,13 +37,15 @@ export default function Menu() {
   return (
     <header className={styles.header}>
       <div className={`${styles.bar} container`}>
-        <a className={styles.logo} href="#accueil" aria-label="Teikinui Decian, accueil" onClick={() => setOpen(false)}>TD<span>.</span></a>
+        <a className={styles.logo} href="#accueil" aria-label="Teikinui Decian, accueil" onClick={() => setOpen(false)}><span className={styles.monogram}>TD<span>.</span></span><span className={styles.wordmark}>Teikinui Decian</span></a>
         <nav id="main-navigation" className={`${styles.nav} ${open ? styles.open : ''}`} aria-label="Navigation principale">
           {links.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={active === id ? 'location' : undefined} onClick={() => setOpen(false)}>{label}</a>)}
         </nav>
         <div className={styles.controls}>
           <button className={styles.theme} type="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label={theme === 'dark' ? 'Activer le thème clair' : 'Activer le thème sombre'} title={theme === 'dark' ? 'Thème clair' : 'Thème sombre'}>
-            <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              {theme === 'dark' ? <><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5" /></> : <path d="M20.5 13.1A8.5 8.5 0 0 1 10.9 3.5a8.5 8.5 0 1 0 9.6 9.6Z" />}
+            </svg>
           </button>
           <button id="menu-toggle" className={styles.menuButton} type="button" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? 'Fermer' : 'Menu'} <span aria-hidden="true">{open ? '×' : '☰'}</span></button>
         </div>

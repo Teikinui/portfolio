@@ -29,21 +29,20 @@ const filters = ['Tous', ...new Set(projects.flatMap((project) => project.techno
 
 function ProjectCard({ project }) {
   return (
-    <article className={styles.project}>
+    <article className={`${styles.project} ${project.github || project.demo ? styles.linked : ''}`}>
       <div className={styles.preview}>
         <div className={styles.previewHeading}><span>{project.type}</span><span aria-hidden="true">/{project.number}</span></div>
         <div className={styles.diagram} role="img" aria-label={`Schéma de principe : ${project.nodes.join(' vers ')}`}>
           {project.nodes.map((node, index) => <div className={styles.node} key={node}><span aria-hidden="true">{['↗', '◇', '▤'][index]}</span>{node}</div>)}
         </div>
-        <span className={styles.previewNote}>Schéma de principe · Infrastructure personnelle</span>
       </div>
       <div className={styles.content}>
         <ul className="badges" aria-label="Technologies">{project.technologies.map((tech) => <li key={tech}>{tech}</li>)}</ul>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
         <div className={styles.links}>
-          {project.demo ? <a href={project.demo} target="_blank" rel="noopener noreferrer">Voir la démo ↗</a> : <span>Démo non publique</span>}
-          {project.github ? <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a> : <span>Dépôt non renseigné</span>}
+          {project.demo ? <a className="text-link" href={project.demo} target="_blank" rel="noopener noreferrer">Voir la démo ↗</a> : <span>Démo non publique</span>}
+          {project.github ? <a className="text-link" href={project.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a> : <span>Dépôt non renseigné</span>}
         </div>
       </div>
     </article>
