@@ -16,7 +16,7 @@
 .socials { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 12px; font-size: 14px; }
 .socials a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
 .portrait { align-self: start; margin: 0; }
-.portrait img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: contain; object-position: center bottom; background-color: #2c343c; border-radius: 4px; }
+.portrait img { display: block; width: 100%; height: auto; border-radius: 4px; }
 .portrait figcaption { display: flex; flex-direction: column; gap: 6px; margin-top: 16px; line-height: 1.5; }
 .portrait strong { font-family: var(--font-heading); font-size: 18px; }
 .portrait figcaption > span { font-size: 13px; color: var(--color-brand-muted); }
