@@ -19,17 +19,7 @@
   margin: 0 0 var(--space-4);
 }
 .section-heading > .eyebrow { grid-column: 1 / -1; }
-.section h2 {
-  margin: 0;
-  font: 400 clamp(40px, 4.2vw, 60px)/1.05 var(--font-display);
-  letter-spacing: -.025em;
-  text-wrap: balance;
-}
-#projets-title,
-#experience-title {
-  font: 500 clamp(30px, 3.34vw, 48px)/1.12 var(--font-body);
-  letter-spacing: -.03em;
-}
+.section h2 { margin: 0; }
 .intro { color: var(--color-muted); line-height: 1.7; font-size: 16px; max-width: 52ch; margin: 0; }
 .actions { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-6); }
 .button {
