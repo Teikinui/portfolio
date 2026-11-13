@@ -30,7 +30,7 @@ function ProjectCard({ project }) {
 export default function Projets({ filter, onFilterChange }) {
   const visible = projects.filter((project) => filter === 'Tous' || project.technologies.includes(filter));
   return (
-    <Section id="projets" eyebrow="01 / Expérimenter & construire" title="Projets personnels" intro="Quelques projets autour de l’infrastructure, de l’auto-hébergement et de l’accès sécurisé.">
+    <Section id="projets" eyebrow="01 / Expérimenter & construire" title="Projets" intro="Projets personnels et académiques autour du cloud, du développement et des infrastructures.">
       <div className={styles.filters} role="group" aria-label="Filtrer les projets par technologie">
         {filters.map((tech) => <button key={tech} type="button" aria-pressed={filter === tech} onClick={() => onFilterChange(tech)}>{tech}</button>)}
       </div>

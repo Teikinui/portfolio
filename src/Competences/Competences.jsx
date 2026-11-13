@@ -15,8 +15,8 @@ const categories = [
   ] },
   { title: 'Exploitation & outils', number: '03', skills: [
     { title: 'Support & opérations', text: 'Support N1/N2, GLPI, analyse des alertes EDR/SOC et maintien en condition opérationnelle.' },
-    { title: 'Outils d’IA', text: 'Herdr, Claude Code, Codex et Pi Agent, utilisés pour concevoir des solutions déployées sous Docker.' },
-    { title: 'Certifications en cours', text: 'Google Cloud Computing Foundations et AWS Cloud Foundations.' },
+    { title: 'Outils d’IA', text: 'Claude Code, Codex et Pi Agent, utilisés pour concevoir des solutions déployées sous Docker.' },
+    { title: 'Certifications & formations', text: 'Google Cloud Computing Foundations et AWS Cloud Foundations (en cours) ; AWS Educate — Getting Started with Networking et Cloud Computing 101 ; MOOC ANSSI SecNumacadémie, SENS CYBER, PIX.' },
   ] },
 ];
 
