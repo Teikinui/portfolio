@@ -3,18 +3,41 @@ import Section from '../components/Section';
 import Icon from '../components/Icon';
 import styles from './Contact.module.css';
 
+function validateField(name, value) {
+  const text = value.trim();
+  if (name === 'name' && text.length < 2) return 'Indiquez votre nom (2 caractères minimum).';
+  if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) return 'Indiquez une adresse e-mail valide.';
+  if (name === 'message' && text.length < 20) return 'Votre message doit contenir au moins 20 caractères.';
+  return null;
+}
+
 export default function Contact() {
   const [errors, setErrors] = useState({});
   const [draft, setDraft] = useState(null);
   const formRef = useRef(null);
 
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setDraft(null);
+    setErrors((current) => {
+      if (!current[name]) return current;
+      const error = validateField(name, value);
+      if (error === current[name]) return current;
+      const next = { ...current };
+      if (error) next[name] = error;
+      else delete next[name];
+      return next;
+    });
+  }
+
   function prepareMessage(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.currentTarget));
     const nextErrors = {};
-    if (data.name.trim().length < 2) nextErrors.name = 'Indiquez votre nom (2 caractères minimum).';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) nextErrors.email = 'Indiquez une adresse e-mail valide.';
-    if (data.message.trim().length < 20) nextErrors.message = 'Votre message doit contenir au moins 20 caractères.';
+    for (const name of ['name', 'email', 'message']) {
+      const error = validateField(name, data[name]);
+      if (error) nextErrors[name] = error;
+    }
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length) {
       setDraft(null);
@@ -38,7 +61,7 @@ export default function Contact() {
           </div>
           <p className={styles.privacy}>Ce formulaire ne transmet et ne stocke aucune donnée. Il prépare un e-mail à envoyer depuis votre messagerie.</p>
         </div>
-        <form className={styles.form} ref={formRef} onSubmit={prepareMessage} onChange={() => setDraft(null)} noValidate aria-label="Préparer un e-mail de contact" aria-describedby="form-help">
+        <form className={styles.form} ref={formRef} onSubmit={prepareMessage} onChange={handleChange} noValidate aria-label="Préparer un e-mail de contact" aria-describedby="form-help">
           <div className={styles.field}>
             <label htmlFor="contact-name">Votre nom <span>(obligatoire)</span></label>
             <input id="contact-name" name="name" autoComplete="name" required minLength={2} maxLength={100} aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'name-error' : undefined} placeholder="Votre nom" />

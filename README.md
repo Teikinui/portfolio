@@ -59,23 +59,24 @@ La refonte globale utilise **Impeccable 4.8.2 exclusivement** : couverture bleue
 
 ## État de la dernière revue
 
-Revue complète des sources React, des CSS Modules, des styles partagés et des animations. Aucun code d’interface n’a été modifié pendant cette revue.
+Revue complète des sources React, des CSS Modules, des styles partagés et des animations, suivie de l’application des quatre corrections ci-dessous.
 
 ### Vérifications exécutées
 
-- `npm run lint` : échec de lancement, commande `eslint` introuvable dans l’environnement.
-- `npm run build` : échec de lancement, commande `vite` introuvable dans l’environnement.
-- Réinstaller les dépendances avec `npm install`, puis relancer ces deux commandes. Ces échecs de lancement ne permettent pas de conclure à une erreur dans le code.
-- Aucun contrôle navigateur effectué lors de cette revue : rendu responsive, deux thèmes, clavier, états du formulaire, survol/focus/pression, mouvement réduit et animations à 10 % de vitesse restent à vérifier.
+- Dépendances réinstallées avec `npm ci` ; npm signale trois vulnérabilités de sévérité modérée, non corrigées dans cette passe.
+- `npm run lint` et `npm run build` : succès après les corrections.
+- Captures du thème sombre inspectées à 390 et 1 440 px, avec un build temporaire à la racine pour le serveur de captures ; build `/portfolio/` régénéré ensuite.
+- Détecteur Impeccable exécuté sur les cinq fichiers source modifiés : réserves consultatives sur des tailles/couleurs non documentées, dont le nouveau contour blanc du portrait.
+- Restent à vérifier en interaction : thème clair, clavier, correction des erreurs du formulaire, survol/focus/pression, mouvement réduit et animations à 10 % de vitesse.
 
-### Points à traiter
+### Corrections appliquées
 
-- **Priorité moyenne — formulaire :** les erreurs restent affichées après correction d’un champ, jusqu’à la soumission suivante. Revalider les champs déjà invalides pendant la saisie.
-- **Finition — icônes :** les icônes de thème et de menu changent instantanément ; prévoir une transition discrète respectant la réduction des mouvements.
-- **Finition — boutons :** remplacer le déplacement vertical à la pression par un léger `scale(0.96)`, désactivé en mouvement réduit.
-- **Finition — portrait :** ajouter un contour intérieur blanc de 1 px à faible opacité pour mieux définir son bord sur la couverture bleue.
+- **Formulaire :** les champs déjà invalides sont revalidés pendant la saisie, avec les mêmes règles qu’à la soumission ; les erreurs disparaissent dès correction.
+- **Icônes :** transition des icônes de thème et de menu par opacité, échelle et flou, sans rebond ni animation initiale ; changement instantané en mouvement réduit.
+- **Boutons :** pression à `scale(0.96)`, désactivée en mouvement réduit.
+- **Portrait :** contour intérieur blanc de 1 px à 10 % d’opacité sur la couverture bleue, dans les deux thèmes.
 
-**Verdict : corrections nécessaires, vérification navigateur en attente.**
+**État : quatre corrections implémentées ; validation des interactions en attente.**
 
 ## Historique des contrôles de la refonte
 

@@ -1,8 +1,27 @@
 import { useEffect, useState } from 'react';
+import { AnimatePresence, m, useReducedMotion } from 'framer-motion';
 import styles from './Menu.module.css';
 import Icon from '../components/Icon';
 
 const links = [['accueil', 'Accueil'], ['projets', 'Projets'], ['competences', 'Compétences'], ['experience', 'Expérience'], ['contact', 'Contact']];
+
+function StateIcon({ name, size = 20 }) {
+  const reduceMotion = useReducedMotion();
+  const hidden = reduceMotion
+    ? { opacity: 0 }
+    : { opacity: 0, scale: 0.25, filter: 'blur(4px)' };
+  return (
+    <span className={styles.stateIcon} style={{ width: size, height: size }} aria-hidden="true">
+      <AnimatePresence initial={false}>
+        <m.span key={name} className={styles.iconLayer} initial={hidden}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }} exit={hidden}
+          transition={reduceMotion ? { duration: 0 } : { type: 'spring', duration: 0.3, bounce: 0 }}>
+          <Icon name={name} size={size} />
+        </m.span>
+      </AnimatePresence>
+    </span>
+  );
+}
 
 export default function Menu() {
   const [open, setOpen] = useState(false);
@@ -44,9 +63,9 @@ export default function Menu() {
         </nav>
         <div className={styles.controls}>
           <button className={styles.theme} type="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label={theme === 'dark' ? 'Activer le thème clair' : 'Activer le thème sombre'} title={theme === 'dark' ? 'Thème clair' : 'Thème sombre'}>
-            <Icon name={theme === 'dark' ? 'sun' : 'moon'} />
+            <StateIcon name={theme === 'dark' ? 'sun' : 'moon'} />
           </button>
-          <button id="menu-toggle" className={styles.menuButton} type="button" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? 'Fermer' : 'Menu'} <Icon name={open ? 'close' : 'menu'} size={18} /></button>
+          <button id="menu-toggle" className={styles.menuButton} type="button" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? 'Fermer' : 'Menu'} <StateIcon name={open ? 'close' : 'menu'} size={18} /></button>
         </div>
       </div>
     </header>

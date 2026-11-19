@@ -11,6 +11,8 @@
 .nav a:hover, .nav a[aria-current] { color: var(--color-ink); }
 .nav a:hover::after, .nav a:focus-visible::after, .nav a[aria-current]::after { transform: scaleX(1); }
 .controls { display: flex; align-items: center; gap: 8px; }
+.stateIcon { position: relative; display: inline-block; flex-shrink: 0; }
+.iconLayer { position: absolute; inset: 0; display: inline-flex; align-items: center; justify-content: center; }
 .theme, .menuButton { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid var(--color-line); border-radius: 4px; color: var(--color-ink); background: transparent; transition: border-color 150ms var(--ease), background-color 150ms var(--ease); }
 .theme:hover, .menuButton:hover { background: var(--color-surface); border-color: var(--color-accent); }
 .menuButton { display: none; gap: 8px; padding: 8px 12px; font-size: 14px; }
