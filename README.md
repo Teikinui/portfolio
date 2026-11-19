@@ -51,8 +51,9 @@ La refonte globale utilise **Impeccable 4.8.2 exclusivement** : couverture bleue
 
 - Thème sombre initial, bascule clair/sombre et persistance `localStorage`, même si le stockage est bloqué.
 - Navigation sticky, menu mobile et fermeture par Échap, lien d’évitement et focus visible.
-- Quatre projets filtrables par technologie, dont **TripTrap**, un jeu de plateformes desktop en Java 21/libGDX ([dépôt GitHub](https://github.com/Teikinui/projet-jeu-java)). L’index du hero réinitialise le filtre puis rejoint le bon projet.
+- Cinq projets filtrables par technologie, dont **TripTrap**, un jeu de plateformes desktop en Java 21/libGDX ([dépôt GitHub](https://github.com/Teikinui/projet-jeu-java)), et **Candidatures**, une application React/Express/SQLite auto-hébergée de suivi d’alternance ([dépôt GitHub](https://github.com/Teikinui/suivi-alternance)). L’index du hero réinitialise le filtre puis rejoint le bon projet.
 - Chaque projet possède un visuel dédié : interface illustrative du job board « tanière » avec deux annonces du seed, parcours navigateur → Cloudflare Zero Trust → services Docker supervisés avec Arcane, et tunnel distant vers WireGuard exécuté dans Docker sur le NAS. Les logos des outils viennent de Simple Icons ; les schémas ne simulent aucun état de production. Sources : `public/projects/infrastructure/SOURCE.md`.
+- Candidatures présente une vraie capture du Kanban dans une mise en page pleine largeur. Le lien « Agrandir » ouvre la capture complète en haute résolution. La prise de vue utilise l’aperçu local du dépôt et six candidatures fictives en SQLite mémoire, sans données privées. Sources et méthode : `public/projects/candidatures/SOURCE.md`.
 - TripTrap possède une vignette pixel art composée des vrais sprites du niveau Tahiti (personnage, plateformes et pièges), cliquable vers son dépôt. Il s’agit d’une illustration statique, pas d’une capture ni d’une démo jouable. Provenance : `public/projects/triptrap/SOURCE.md`. Les URL manquantes restent explicitement non publiques/non renseignées ; les dépôts réels du job board et de TripTrap sont conservés.
 - Formulaire validant nom, e-mail et message, puis préparant un `mailto:`. **Aucun backend n’est configuré et aucun envoi n’est simulé.** L’envoi doit être confirmé dans l’application e-mail.
 - CV et photos conservés ; portrait WebP de 36 Kio, polices locales Geist et DM Sans, aucune requête de police externe à l’exécution.
@@ -78,6 +79,15 @@ Revue complète des sources React, des CSS Modules, des styles partagés et des 
 - **Portrait :** contour intérieur blanc de 1 px à 10 % d’opacité sur la couverture bleue, dans les deux thèmes.
 
 **État : quatre corrections implémentées ; validation des interactions en attente.**
+
+## Vérifications de l’ajout Candidatures
+
+- `npm run lint` et build Vite : succès.
+- Captures du portfolio inspectées à 320, 390, 1 024 et 1 440 px en thème sombre : cinquième projet, index d’accueil et vignette agrandissable intégrés.
+- Vérification des données : cinq identifiants uniques, filtre SQLite, URL du dépôt, capture complète 1440×3137 et deux images de moins de 250 ko chacune.
+- Impeccable : scan manuel des six fichiers source modifiés ; 38 réserves consultatives de couleurs/tailles hors documentation, aucune sévérité bloquante signalée par ce scan.
+- Make-interfaces-feel-better : dimensions réservées pour éviter les décalages, chargement différé, contour neutre adapté au thème, cible d’agrandissement de 44 px et transition de couleur limitée à 150 ms. Aucun zoom ni animation répétitive sur la capture.
+- Les interactions clavier/souris, le thème clair et les animations à 10 % de vitesse n’ont pas été retestés pendant cet ajout.
 
 ## Historique des contrôles de la refonte
 

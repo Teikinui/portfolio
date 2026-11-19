@@ -39,4 +39,11 @@
 .container { fill: #102c30; stroke: #507b77; }
 .wireguard { fill: #f4f1e9; }
 .wireguardLabel { fill: #142139; font-size: 17px; font-weight: 500; }
+.screenshot { background: var(--color-surface); color: var(--color-ink); }
+.captureToolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 20px; font-size: 13px; line-height: 1.5; color: var(--color-muted); transition: background-color 150ms var(--ease); }
+.enlarge { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; flex-shrink: 0; color: var(--color-accent); text-decoration: underline; text-underline-offset: 4px; }
+.captureImage { width: 100%; height: auto; aspect-ratio: 8 / 5; outline: 1px solid oklch(1 0 0 / 0.1); outline-offset: -1px; }
+:global(:root[data-theme='light']) .captureImage { outline-color: oklch(0 0 0 / 0.1); }
+.screenshot:hover .captureToolbar, .screenshot:focus-visible .captureToolbar { background: var(--color-band); }
+@media (max-width: 600px) { .captureToolbar { padding-inline: 16px; } }
 @media (max-width: 375px) { .board, .browserBar { padding-inline: 16px; } .offer { gap: 8px; } }

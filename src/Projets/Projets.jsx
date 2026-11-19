@@ -8,7 +8,7 @@ const filters = ['Tous', ...new Set(projects.flatMap((project) => project.techno
 
 function ProjectCard({ project }) {
   return (
-    <article id={`projet-${project.number}`} className={styles.project} aria-labelledby={`projet-${project.number}-title`}>
+    <article id={`projet-${project.number}`} className={`${styles.project} ${project.preview === 'candidatures' ? styles.featured : ''}`} aria-labelledby={`projet-${project.number}-title`}>
       <div className={styles.content}>
         <h3 id={`projet-${project.number}-title`}>{project.title}</h3>
         <p className={styles.type}>{project.type}</p>

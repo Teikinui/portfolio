@@ -27,4 +27,11 @@ export const projects = [
     preview: 'triptrap',
     demo: null, github: 'https://github.com/Teikinui/projet-jeu-java',
   },
+  {
+    number: '05', title: 'Candidatures — suivi d’alternance',
+    type: 'Application personnelle · Auto-hébergement', technologies: ['React', 'Express', 'SQLite', 'Docker'],
+    description: 'Application auto-hébergée pour organiser les candidatures en Kanban ou en tableau, suivre les relances et consulter les statistiques. Les données sont conservées dans SQLite, avec export CSV/JSON et déploiement Docker. La capture présente des candidatures fictives dans une instance locale isolée.',
+    preview: 'candidatures',
+    demo: null, github: 'https://github.com/Teikinui/suivi-alternance',
+  },
 ];
