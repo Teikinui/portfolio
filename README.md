@@ -51,7 +51,7 @@ La refonte globale utilise **Impeccable 4.8.2 exclusivement** : couverture bleue
 
 - Thème sombre initial, bascule clair/sombre et persistance `localStorage`, même si le stockage est bloqué.
 - Navigation sticky, menu mobile et fermeture par Échap, lien d’évitement et focus visible.
-- Trois projets filtrables par technologie. L’index du hero réinitialise le filtre puis rejoint le bon projet.
+- Quatre projets filtrables par technologie, dont **TripTrap**, un jeu de plateformes desktop en Java 21/libGDX ([dépôt GitHub](https://github.com/Teikinui/projet-jeu-java)). L’index du hero réinitialise le filtre puis rejoint le bon projet.
 - Les aperçus sont des schémas de principe, pas de fausses captures. Les URL manquantes restent explicitement non publiques/non renseignées ; le dépôt réel du job board est conservé.
 - Formulaire validant nom, e-mail et message, puis préparant un `mailto:`. **Aucun backend n’est configuré et aucun envoi n’est simulé.** L’envoi doit être confirmé dans l’application e-mail.
 - CV et photos conservés ; portrait WebP de 36 Kio, polices locales Geist et DM Sans, aucune requête de police externe à l’exécution.

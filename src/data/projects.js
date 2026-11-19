@@ -20,4 +20,11 @@ export const projects = [
     nodes: ['Accès distant', 'WireGuard', 'NAS personnel'], icons: ['monitor', 'shield', 'server'],
     demo: null, github: null,
   },
+  {
+    number: '04', title: 'TripTrap — jeu vidéo en Java',
+    type: 'Développement de jeu · Desktop', technologies: ['Java', 'libGDX', 'Gradle'],
+    description: 'Jeu de plateformes pour ordinateur développé en Java 21 avec libGDX. Le joueur traverse des niveaux thématiques, dont Tahiti, en évitant des pièges. Le projet comprend la gestion des collisions, des écrans de jeu et des tests automatisés.',
+    nodes: ['Java 21', 'Moteur libGDX', 'Niveaux & pièges'], icons: ['code', 'layers', 'monitor'],
+    demo: null, github: 'https://github.com/Teikinui/projet-jeu-java',
+  },
 ];
