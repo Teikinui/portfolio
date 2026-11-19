@@ -29,7 +29,6 @@ export default function Accueil({ onProjectSelect }) {
         <nav className={styles.projectIndex} aria-label="Accès aux projets">
           {projects.map(project => <a key={project.number} href={`#projet-${project.number}`} onClick={onProjectSelect}><span>{project.title}</span><Icon /></a>)}
         </nav>
-        <div className={styles.highlights} aria-label="Domaines d’intérêt"><span>Cloud & infrastructure</span><span>Systèmes & réseaux</span><span>Sécurité</span></div>
       </div>
     </section>
   );
