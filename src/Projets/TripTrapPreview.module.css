@@ -1,0 +1,26 @@
+.preview {
+  --game-ink: #0e3b3c;
+  --game-sky: #8fdcdd;
+  position: relative;
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 8 / 5;
+  border-radius: var(--radius-md);
+  background: var(--game-sky);
+  color: var(--game-ink);
+  text-decoration: none;
+  outline: 1px solid oklch(1 0 0 / 0.1);
+  outline-offset: -1px;
+}
+.preview:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 5px; }
+.artwork { width: 100%; height: 100%; transition: transform 180ms var(--ease); }
+.scene { display: block; width: 100%; height: 100%; image-rendering: pixelated; }
+.heading { position: absolute; inset: 24px 24px auto; display: flex; align-items: start; justify-content: space-between; gap: 16px; pointer-events: none; }
+.title { font-family: var(--font-heading); font-size: clamp(26px, 3vw, 36px); font-weight: 500; line-height: 1; letter-spacing: -.04em; }
+.location { display: block; margin-top: 8px; font-family: var(--font-body); font-size: 13px; font-weight: 400; letter-spacing: 0; }
+.arrow { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid currentColor; border-radius: var(--radius-sm); transition: color 150ms var(--ease), background-color 150ms var(--ease); }
+.preview:hover .artwork { transform: scale(1.02); }
+.preview:hover .arrow, .preview:focus-visible .arrow { background: var(--game-ink); color: var(--game-sky); }
+@media (max-width: 600px) { .heading { inset: 20px 20px auto; } }
+@media (prefers-reduced-motion: reduce) { .preview:hover .artwork { transform: none; } }

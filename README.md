@@ -52,7 +52,7 @@ La refonte globale utilise **Impeccable 4.8.2 exclusivement** : couverture bleue
 - Thème sombre initial, bascule clair/sombre et persistance `localStorage`, même si le stockage est bloqué.
 - Navigation sticky, menu mobile et fermeture par Échap, lien d’évitement et focus visible.
 - Quatre projets filtrables par technologie, dont **TripTrap**, un jeu de plateformes desktop en Java 21/libGDX ([dépôt GitHub](https://github.com/Teikinui/projet-jeu-java)). L’index du hero réinitialise le filtre puis rejoint le bon projet.
-- Les aperçus sont des schémas de principe, pas de fausses captures. Les URL manquantes restent explicitement non publiques/non renseignées ; le dépôt réel du job board est conservé.
+- Les aperçus d’infrastructure sont des schémas de principe. TripTrap possède une vignette pixel art composée des vrais sprites du niveau Tahiti (personnage, plateformes et pièges), cliquable vers son dépôt. Il s’agit d’une illustration statique, pas d’une capture ni d’une démo jouable. Provenance : `public/projects/triptrap/SOURCE.md`. Les URL manquantes restent explicitement non publiques/non renseignées ; les dépôts réels du job board et de TripTrap sont conservés.
 - Formulaire validant nom, e-mail et message, puis préparant un `mailto:`. **Aucun backend n’est configuré et aucun envoi n’est simulé.** L’envoi doit être confirmé dans l’application e-mail.
 - CV et photos conservés ; portrait WebP de 36 Kio, polices locales Geist et DM Sans, aucune requête de police externe à l’exécution.
 - Une entrée discrète du hero à contenu déjà visible, sans apparition répétitive des sections ; `prefers-reduced-motion` respecté.

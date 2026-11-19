@@ -80,6 +80,10 @@ Petits rayons fonctionnels : contrôles et portrait, puis champs et panneaux. Au
 
 Boutons de 48px minimum, contrôles de 44px minimum, focus visible de 3px. Iconographie SVG partagée dans Icon.jsx, même trait et même poids. L’index du hero réinitialise les filtres avant d’atteindre le projet sélectionné. Le formulaire conserve les valeurs en erreur et confirme uniquement la préparation d’un e-mail. Le mouvement d’entrée du hero part d’un contenu visible ; la réduction des mouvements est respectée.
 
+### Aperçu TripTrap
+
+Vignette 8:5 illustrant le niveau Tahiti à partir de sept sprites originaux du dépôt Java : décor, personnage en saut, plateformes, objectif et pièges. Composition SVG statique, explicitement décrite comme une illustration et non une capture ou une démo. Les couleurs locales `#0e3b3c` et `#8fdcdd` viennent du thème Tahiti du jeu ; elles ne remplacent pas les couleurs du portfolio. La vignette entière ouvre le dépôt GitHub, avec focus visible, zoom au survol limité à 1.02 et suppression du zoom en mouvement réduit. Provenance dans `public/projects/triptrap/SOURCE.md`.
+
 ## Do's and Don'ts
 
 - Do conserver les contenus, intitulés et liens réels ; les données projets sont partagées dans src/data/projects.js.

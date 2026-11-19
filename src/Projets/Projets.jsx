@@ -2,6 +2,7 @@ import Section from '../components/Section';
 import Icon from '../components/Icon';
 import { projects } from '../data/projects';
 import styles from './Projets.module.css';
+import TripTrapPreview from './TripTrapPreview';
 
 const filters = ['Tous', ...new Set(projects.flatMap((project) => project.technologies))];
 
@@ -18,11 +19,13 @@ function ProjectCard({ project }) {
           {project.github ? <a className="text-link" href={project.github} target="_blank" rel="noopener noreferrer">GitHub <Icon size={16} /></a> : <span>Dépôt non renseigné</span>}
         </div>
       </div>
-      <div className={styles.preview}>
-        <div className={styles.diagram} role="img" aria-label={`Schéma de principe : ${project.nodes.join(' vers ')}`}>
-          {project.nodes.map((node, index) => <div className={styles.node} key={node}><Icon name={project.icons[index]} size={28} /><span>{node}</span></div>)}
+      {project.preview === 'triptrap' ? <TripTrapPreview href={project.github} /> : (
+        <div className={styles.preview}>
+          <div className={styles.diagram} role="img" aria-label={`Schéma de principe : ${project.nodes.join(' vers ')}`}>
+            {project.nodes.map((node, index) => <div className={styles.node} key={node}><Icon name={project.icons[index]} size={28} /><span>{node}</span></div>)}
+          </div>
         </div>
-      </div>
+      )}
     </article>
   );
 }
