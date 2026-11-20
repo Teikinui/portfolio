@@ -44,6 +44,7 @@ export default function Menu() {
 
   useEffect(() => {
     if (!open) return;
+    document.querySelector('#main-navigation a')?.focus();
     const dismiss = (event) => {
       if (event.key === 'Escape') {
         setOpen(false);
@@ -57,10 +58,14 @@ export default function Menu() {
   return (
     <header className={styles.header}>
       <div className={`${styles.bar} container`}>
-        <a className={styles.logo} href="#accueil" aria-label="Teikinui Decian, accueil" onClick={() => setOpen(false)}><span className={styles.monogram}>TD<span>.</span></span><span className={styles.wordmark}>Teikinui Decian<small>EPITECH Paris</small></span></a>
+        <a className={styles.logo} href="#accueil" onClick={() => setOpen(false)}><img className={styles.portrait} src={`${import.meta.env.BASE_URL}photo_profil.webp`} width="640" height="794" alt="" /><span className={styles.wordmark}>Teikinui Decian<small>EPITECH Paris</small></span></a>
         <nav id="main-navigation" className={`${styles.nav} ${open ? styles.open : ''}`} aria-label="Navigation principale">
           {links.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={active === id ? 'location' : undefined} onClick={() => setOpen(false)}>{label}</a>)}
         </nav>
+        <div className={styles.railFooter}>
+          <a className={styles.cv} href={`${import.meta.env.BASE_URL}CV/CV_Teikinui_DECIAN_Cloud.pdf`} download="CV_Teikinui_DECIAN_Cloud.pdf">Télécharger mon CV <Icon name="download" size={18} /></a>
+          <a className={styles.contact} href="#contact" onClick={() => setOpen(false)}>Échangeons <Icon size={18} /></a>
+        </div>
         <div className={styles.controls}>
           <button className={styles.theme} type="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label={theme === 'dark' ? 'Activer le thème clair' : 'Activer le thème sombre'} title={theme === 'dark' ? 'Thème clair' : 'Thème sombre'}>
             <StateIcon name={theme === 'dark' ? 'sun' : 'moon'} />

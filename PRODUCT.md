@@ -20,21 +20,20 @@ Présenter les projets, compétences, expériences et formations de Teikinui, do
 - Publication GitHub Pages sur `/portfolio/`, anciennes routes redirigées vers les sections.
 - Navigation sticky, menu mobile, filtres technologiques, thèmes clair/sombre persistants (sombre initial), réduction des animations et navigation clavier à conserver.
 - Le formulaire valide les champs puis prépare un lien `mailto:`. Aucun backend d’envoi ; ne pas présenter un message prêt comme envoyé.
-- Textes, liens existants et trois projets à conserver. Aucune expérience, qualification, entreprise ou performance à inventer.
+- Textes, liens existants et cinq projets à conserver. Aucune expérience, qualification, entreprise ou performance à inventer.
 - Après vérification : commit ciblé sur main, push origin/main, publication avec npm run deploy, contrôle des branches et assets servis.
 
 ## Brand Commitments
 
-Teikinui Decian, étudiant en Master of Science Cloud à EPITECH Paris. Conserver le nom de l’établissement et le parcours exacts ; ne pas fabriquer de logo officiel, d’agrément ou de partenariat. Voix française, concrète et professionnelle. L’utilisateur remplace la précédente référence de design par Impeccable exclusivement et demande une refonte de tout le site.
-
-La préférence beige antérieure reste un repère d’identité personnel ; elle peut vivre dans le thème clair et les surfaces secondaires, sans empêcher une nouvelle composition et un rôle plus affirmé du bleu académique.
+Teikinui Decian, étudiant en Master of Science Cloud à EPITECH Paris. Conserver le nom de l’établissement et le parcours exacts ; ne pas fabriquer de logo officiel, d’agrément ou de partenariat. Voix française, concrète et professionnelle. Refonte complète demandée avec Impeccable et make-interfaces-feel-better. L’utilisateur choisit la maîtrise technique comme objectif et autorise une identité visuelle entièrement nouvelle, sans conserver bleu ou beige. Direction approuvée : « Galerie d’ingénierie », navigation latérale et réalisations réelles au premier plan, surfaces minérales, ocre et encre végétale.
 
 ## Evidence on Hand
 
 - Textes dans src/Accueil, src/Projets, src/Competences, src/Parcours et src/Contact.
 - Portrait public/photo_profil.webp et photo originale conservée.
 - CV public/CV/CV_Teikinui_DECIAN_Cloud.pdf.
-- Dépôt public du job board ; deux projets d’infrastructure sans démonstration ou dépôt public renseigné.
+- Dépôts publics du job board, de TripTrap et de Candidatures ; deux projets d’infrastructure sans démonstration ou dépôt public renseigné.
+- Capture réelle de Candidatures avec données fictives, sprites du jeu et schémas de principe ; provenance sous public/projects.
 - Coordonnées GitHub, LinkedIn et e-mail existantes.
 
 ## Product Principles
