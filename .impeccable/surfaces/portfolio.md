@@ -1,21 +1,23 @@
-# Portfolio — Galerie d’ingénierie
+# Portfolio — route principale
 
-Primary target: src/App.jsx. Mode: Experience. Refonte approuvée : maîtrise technique, aucune apparence ancienne imposée ; tous les contenus et comportements sont conservés.
+Primary target: src/App.jsx. Mode: Experience, avec lecture de candidature par les recruteurs.
 
 ## Direction contract
 
-**THESIS** — Les réalisations sont les pièces d’une galerie d’ingénierie ; les faits expliquent leur conception. Refuser la couverture promotionnelle suivie de petites cartes interchangeables.
+**THESIS** — Un dossier de candidature qui montre les réalisations réelles, pas une interface technique fictive. La refonte remplace les petites cartes répétées par une couverture et des dossiers détaillés.
 
-**OWN-WORLD** — Sol minéral clair ou charbon végétal, ocre sur de grandes surfaces, encre vert profond. Onest pour le relief typographique, Public Sans pour la lecture, liens nets et rayons fonctionnels. Aucun faux terminal ni métrique inventée.
+**OWN-WORLD** — Bleu académique sur de grandes régions, papier beige en thème clair, encre bleutée en sombre, typographie sans-serif locale, contours fins et contrôles rectangulaires simples.
 
-**STORY** — Voir une réalisation réelle, explorer les cinq projets, comprendre les compétences et le parcours, accéder au CV et au contact.
+**STORY** — Comprendre le profil Cloud/EPITECH ; ouvrir les projets ; lire compétences et parcours ; télécharger le CV ou préparer un e-mail.
 
-**FIRST VIEWPORT** — Navigation latérale avec portrait et CV ; grand titre existant, disponibilité ; une réalisation en grand, sélectionnable par cinq onglets nommés. Interaction signature : changer la pièce exposée, puis ouvrir son dossier. Le profil détaillé reste accessible dans l’accueil, sans masquer les preuves.
+**FIRST VIEWPORT** — Grand titre existant sur la couverture bleue, description factuelle, disponibilité sur une ligne, CTA accessibles, petit portrait réel et index fonctionnel des trois projets. Interaction signature : un lien de l’index réinitialise le filtre puis atteint le bon projet, y compris sur mobile. Une seule entrée du hero, sans contenu initialement invisible.
 
-**FORM** — Galerie de musée technique, troisième des sept directions ancrées dans le contexte, approuvée sur la page de décision. seed:a707f38cf3efe51c. Exécution code-led, sans génération d’images. Les disciplines retenues : rythme des régions, parcours identifiable, information stable, identité personnelle, hiérarchie assumée, vraie réalisation visible.
+**FORM** — Dossier de candidature académique, candidat 7 de la liste ancrée dans le contexte. seed:712d3535fc7a1de7. Exécution directe en code, sans image générée, comme demandé par l’utilisateur pour avancer vers la livraison ; aucun choix utilisateur fictif enregistré.
 
 **FINISH** — unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
-## Contraintes
+## Provenance et revue
 
-Navigation clavier et mobile, thèmes persistants, filtres, anciennes routes, capture agrandissable, liens réels et formulaire mailto conservés. Revue et documentation dans le fil principal : aucun outil de sous-agent autonome disponible. Sources des ressources conservées sous public/projects ; aucune donnée privée ajoutée.
+Les seules images de contenu sont le portrait et la photo originale déjà présents dans public ; aucune image ou preuve externe n’a été ajoutée. Les icônes SVG sont des pictogrammes d’interface, pas des logos tiers.
+
+Revue finale effectuée dans le fil principal faute d’outil de sous-agent. Captures locales et tests référencés dans README.md. Le détecteur relève le caractère répandu de Geist et quelques fins de paragraphes courtes ; ce sont des réserves de composition, pas des erreurs fonctionnelles ou de contraste. La police locale est conservée pour éviter une nouvelle régression typographique hors de la passe de correction demandée.

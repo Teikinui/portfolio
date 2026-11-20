@@ -1,178 +1,101 @@
 ---
-name: Portfolio — Galerie d’ingénierie
-description: Réalisations réelles, surfaces minérales et encre végétale.
+name: Portfolio — Teikinui Decian
+description: Dossier de candidature cloud, bleu académique et surfaces papier.
 colors:
-  ochre: "#e8bd53"
-  forest: "#203b35"
-  ink: "#20352c"
-  mineral: "#f5f7f4"
-  white: "#ffffff"
-  light-band: "#e7ede5"
-  light-muted: "#56665b"
-  light-accent: "#365b42"
-  light-line: "#becbbf"
-  dark-ground: "#17211e"
-  dark-surface: "#202d27"
-  dark-band: "#2b3a31"
-  dark-ink: "#f0f4ed"
-  dark-muted: "#b7c4b8"
-  dark-accent: "#ead28c"
-  dark-line: "#46564b"
-  dark-button-ink: "#222c24"
-  error-dark: "#ffb6a6"
-  error-light: "#a42d22"
-  image-outline-dark: "oklch(1 0 0 / 0.1)"
-  image-outline-light: "oklch(0 0 0 / 0.1)"
+  brand: "#153e96"
+  brand-light: "#1d4db0"
+  brand-deep: "#102d64"
+  paper-dark: "#0d1728"
+  paper-light: "#f4f1e9"
+  surface-dark: "#142239"
+  surface-light: "#fffdf8"
+  ink-dark: "#f1f5fc"
+  ink-light: "#142139"
+  muted-dark: "#b5c4da"
+  muted-light: "#526177"
 typography:
   display:
-    fontFamily: "Onest, sans-serif"
-    fontSize: "clamp(2.5rem, 4.6vw, 4.5rem)"
-    fontWeight: 550
-    lineHeight: 1.04
+    fontFamily: "Geist, sans-serif"
+    fontSize: "clamp(2.4rem, 6.4vw, 6rem)"
+    fontWeight: 500
+    lineHeight: 1.02
     letterSpacing: "-0.04em"
   headline:
-    fontFamily: "Onest, sans-serif"
-    fontSize: "clamp(2.2rem, 4vw, 3.5rem)"
-    fontWeight: 550
-    lineHeight: 1.08
+    fontFamily: "Geist, sans-serif"
+    fontSize: "clamp(2rem, 4.1vw, 3.5rem)"
+    fontWeight: 500
+    lineHeight: 1.1
     letterSpacing: "-0.035em"
-  title:
-    fontFamily: "Onest, sans-serif"
-    fontSize: "clamp(1.4rem, 2vw, 1.9rem)"
-    fontWeight: 550
-    lineHeight: 1.2
-    letterSpacing: "-0.025em"
   body:
-    fontFamily: "Public Sans, sans-serif"
-    fontSize: "15px"
-    fontWeight: 400
-    lineHeight: 1.8
-  intro:
-    fontFamily: "Public Sans, sans-serif"
+    fontFamily: "DM Sans, sans-serif"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.75
-  label:
-    fontFamily: "Public Sans, sans-serif"
-    fontSize: "13px"
-    fontWeight: 400
-    lineHeight: 1.5
 rounded:
-  sm: "5px"
-  md: "10px"
-  lg: "18px"
+  sm: "4px"
+  md: "8px"
+  lg: "12px"
 spacing:
-  xs: "4px"
   sm: "8px"
-  control: "12px"
   md: "16px"
   lg: "24px"
-  xl: "32px"
-  group: "48px"
-  section: "64px"
+  xl: "48px"
+  section: "clamp(64px, 7vw, 112px)"
 components:
-  button-primary-dark:
-    backgroundColor: "{colors.ochre}"
-    textColor: "{colors.dark-button-ink}"
+  button-primary:
     rounded: "{rounded.sm}"
-    padding: "12px 18px"
+    padding: "12px 20px"
     height: "48px"
-  button-primary-light:
-    backgroundColor: "{colors.forest}"
-    textColor: "{colors.mineral}"
-    rounded: "{rounded.sm}"
-    padding: "12px 18px"
-    height: "48px"
-  gallery-tab-active:
-    backgroundColor: "{colors.forest}"
-    textColor: "{colors.mineral}"
-    rounded: "{rounded.md}"
-    padding: "10px 12px"
-    height: "44px"
 ---
 
-# Design System: Galerie d’ingénierie
+# Design System: Teikinui Decian
 
 ## Overview
 
-**Creative North Star: "Galerie d’ingénierie"**
+**Creative North Star: "Le dossier de candidature technique"**
 
-Les réalisations sont les pièces principales ; les informations techniques en rendent la lecture précise. La maîtrise se montre par des captures, schémas et faits existants, pas par un décor de terminal ou des indicateurs fictifs. L’identité précédente bleu/beige est remplacée avec l’accord de l’utilisateur.
-
-Le système est minéral et végétal, avec une présence ocre franche. La composition accueille aussi bien un grand visuel qu’un passage dense de parcours ou de compétences. La précision vient de la hiérarchie, de l’alignement et du rythme, sans animation répétitive.
-
-**Key Characteristics:**
-- Réalisations visibles avant les longs textes.
-- Palette ocre, encre végétale et surfaces minérales.
-- Typographie locale, lisible et sans-serif.
-- Deux thèmes, même identité et mêmes repères d’interaction.
+Refonte globale guidée par Impeccable 4.8.2. Le bleu prend en charge les grandes régions ; les contenus deviennent des dossiers lisibles plutôt qu’une suite de petites cartes. Le portrait, les projets et le parcours réels sont les seuls éléments de preuve. Aucune imitation de logo officiel EPITECH.
 
 ## Colors
 
-### Primary
-
-L’ocre porte les grandes régions identitaires et les actions du thème sombre. La forêt structure les actions claires et les régions de fermeture. Leur rôle ne se limite pas à de petits accents.
-
-### Neutral
-
-Le thème clair utilise mineral, white et light-band ; le sombre dark-ground, dark-surface et dark-band. Les encres, séparateurs et états d’erreur ont chacun une variante de thème. Les sources exécutables sont les variables de `src/index.css`.
-
-**The Evidence Rule.** Les couleurs d’un projet appartiennent à son interface ou à son schéma, pas au thème du portfolio. Le pixel art de TripTrap, la capture Candidatures et les schémas d’infrastructure gardent leur palette propre.
+Le thème initial est sombre ; le thème clair conserve la tonalité papier beige du portfolio. Les couvertures du hero, du parcours et du footer gardent leur rôle bleu dans les deux thèmes. Les nuances du premier plan sont adaptées au fond, jamais inversées aveuglément. Les sources exécutables sont les variables de src/index.css et les surcharges de section dans src/App.css.
 
 ## Typography
 
-Onest porte les titres, avec une graisse variable de 550 et des approches resserrées. Public Sans porte les paragraphes, labels et contrôles. Les fontes sont locales ; provenance et licences sous `public/fonts`.
-
-Titres équilibrés, paragraphes en `text-wrap: pretty`, lissage sur la racine, chiffres tabulaires pour les périodes. Les introductions font 16px, les descriptions 15px, les labels généralement 13–14px. Les champs restent à 16px pour éviter le zoom mobile. Les grands titres diminuent jusqu’à 34px dans l’accueil mobile.
-
-**The Reading Rule.** Les descriptions restent autour de 65ch ; les détails de parcours ne dépassent pas 75ch. Sur téléphone, les schémas sont recomposés en HTML avec des textes de 13–20px plutôt que simplement rétrécis.
+Geist locale, graisse 500, pour tous les h1–h4. DM Sans locale pour le corps et les contrôles. Le titre du hero est plafonné à 6rem ; les tailles diminuent sans couper les mots. Les libellés secondaires font au moins 13px. Ne pas recréer d’exceptions typographiques par ID.
 
 ## Layout
 
-Rail de 224px sur desktop, puis barre sticky de 72px sous 1000px. Le contenu utilise la largeur restante, un maximum de 1160px et des marges égales de 48px, puis 32px et 20px. Les sections ont un rythme de 64 à 104px, sans hauteur d’écran imposée.
-
-Les projets utilisent deux colonnes quand l’espace le permet ; sous 700px, une seule. La tranche desktop 1001–1200px utilise aussi une colonne, car le rail reste présent. La réalisation avec capture longue conserve une mise en page pleine largeur. Les compétences et le parcours sont des groupes de lecture, pas une collection de cartes identiques.
+Conteneur partagé, maximum 1248px ; marges latérales 48px sur grand écran, puis 32, 24 et 20px. Les seuils principaux sont 1000, 800, 700 et 600px selon la composition. Le hero est une couverture à titre pleine largeur, suivie du texte et du portrait, puis d’un index de projets. Les listes de projets et expériences alternent avec les colonnes de compétences ; aucune hauteur d’écran fixe n’est imposée.
 
 ## Elevation & Depth
 
-Système plat, sans ombre décorative. Les changements de fond créent la profondeur ; les traits d’un pixel séparent les éléments structurels. Le contour des images est neutre, intérieur et adapté au thème. Le focus de 3px est un état, pas un effet d’éclairage.
+Système plat, sans ombres décoratives. Les régions sont différenciées par leurs fonds et leurs séparateurs d’un pixel. La navigation reste sticky et opaque pour assurer la lecture pendant le défilement.
 
 ## Shapes
 
-Trois rayons fonctionnels : contrôles petits, visuels intermédiaires et grandes surfaces. Une galerie avec 8px de padding et des onglets à 10px emploie un rayon extérieur de 18px. Le portrait reste rectangulaire, sans masque décoratif.
+Petits rayons fonctionnels : contrôles et portrait, puis champs et panneaux. Aucun masque géométrique sur la photo, aucun halo ou dégradé de texte.
 
 ## Components
 
-### Buttons
+Boutons de 48px minimum, contrôles de 44px minimum, focus visible de 3px. Iconographie SVG partagée dans Icon.jsx, même trait et même poids. L’index du hero réinitialise les filtres avant d’atteindre le projet sélectionné. Le formulaire conserve les valeurs en erreur et confirme uniquement la préparation d’un e-mail. Le mouvement d’entrée du hero part d’un contenu visible ; la réduction des mouvements est respectée.
 
-Hauteur minimale de 48px, labels à 14px, icône SVG partagée. Transitions explicites de 150ms, pression à `scale(0.96)`, désactivée en mouvement réduit. Les liens de texte et contrôles compacts ont une cible d’au moins 44px.
+### Visuels des projets web et infrastructure
 
-### Navigation
+Les trois premiers projets ont chacun une composition propre dans `ProjectPreview.jsx`, sans animation répétitive. Le job board montre une vue HTML/CSS illustrative, pas une capture : nom « tanière », palette crème/terracotta du dépôt source (`#fbf5ee`, `#fffdf9`, `#f1e3d1`, `#a4501f`, `#1e140e`, `#6b3e22`, séparateur `#dcc9b6`), deux annonces du seed explicitement marquées comme démonstration, lien vers le code et non une candidature fictive. Les schémas SVG 480×320 présentent l’accès Zero Trust et le tunnel WireGuard à l’intérieur de Docker sur le NAS. Ils emploient des fonds stables bleu `#112236` et vert `#102c30`, des traits fins, une typographie partagée, et les logos réels Cloudflare/Docker/WireGuard, sans statut actif, métrique ou matériel inventé. Couleurs secondaires locales limitées au rendu du diagramme ; ces palettes ne changent pas les thèmes du site. Sources dans `public/projects/infrastructure/SOURCE.md`.
 
-Portrait, nom et établissement dans le rail, repère actif par fond et point, liens CV/contact toujours visibles sur desktop. En mobile : bouton Menu, focus sur le premier lien à l’ouverture, fermeture par Échap avec retour au bouton. Les thèmes sont persistants et le sombre reste initial en l’absence de préférence sauvegardée.
+### Capture Candidatures
 
-### Gallery
+Le cinquième projet utilise la vraie interface de son dépôt React/Express, capturée sur une instance locale isolée avec six candidatures fictives en SQLite mémoire. Dossier pleine largeur : résumé en deux colonnes sur desktop, puis capture Kanban 1440×900 sans recadrage CSS. Le lien « Agrandir » ouvre la capture complète 1440×3137 dans un nouvel onglet. La barre de la vignette annonce « Capture réelle · Données fictives » ; elle possède une cible de 44px minimum, un focus visible et une réponse de couleur au survol/clavier. Pas de zoom sur l’image pour préserver la netteté du texte, pas d’animation d’entrée supplémentaire. Dimensions explicites, chargement différé et contour neutre intérieur de 1px adapté au thème. L’index d’accueil passe à cinq colonnes, puis deux avec une dernière entrée pleine largeur sous 1000px, puis une sous 600px. Sources dans `public/projects/candidatures/SOURCE.md`.
 
-Onglets nommés et panneau associé, navigation par flèches, Home et End. Le changement de pièce est immédiat : pas de carrousel, défilement automatique ou entrée rejouée. Le lien du dossier réinitialise les filtres. Le contenu existe sans mouvement.
+### Aperçu TripTrap
 
-### Cards / Containers
-
-Les aperçus de projets ouvrent les dossiers visuellement, suivis de textes et de technologies. Les cadres demeurent simples ; aucune ombre ne simule un équipement réel. Les visuels agrandissables annoncent leur action et les liens externes leur nouvel onglet.
-
-### Inputs / Fields
-
-Formulaire dans une surface tonale, champs sur une surface distincte, bordure structurelle, labels visibles et erreurs associées. Les valeurs sont conservées et les erreurs des champs corrigés disparaissent pendant la saisie. Confirmation de préparation d’un `mailto:`, jamais d’envoi automatique.
-
-### Motion
-
-Une seule entrée discrète du titre. Changements fréquents limités aux couleurs et opacités. Les icônes contextuelles utilisent Framer Motion : échelle .25 à 1, opacité 0 à 1, flou 4px à 0, spring .3s et bounce 0 ; pas d’animation initiale des icônes. Les mouvements non essentiels disparaissent sous `prefers-reduced-motion`.
+Vignette 8:5 illustrant le niveau Tahiti à partir de sept sprites originaux du dépôt Java : décor, personnage en saut, plateformes, objectif et pièges. Composition SVG statique, explicitement décrite comme une illustration et non une capture ou une démo. Les couleurs locales `#0e3b3c` et `#8fdcdd` viennent du thème Tahiti du jeu ; elles ne remplacent pas les couleurs du portfolio. La vignette entière ouvre le dépôt GitHub, avec focus visible, zoom au survol limité à 1.02 et suppression du zoom en mouvement réduit. Provenance dans `public/projects/triptrap/SOURCE.md`.
 
 ## Do's and Don'ts
 
-- Do montrer les vraies réalisations et conserver la provenance des images et polices.
-- Do garder l’action CV et le contact accessibles au clavier.
-- Do séparer illustration, données fictives et capture réelle.
-- Do tester les deux thèmes dès 320px et les états du formulaire.
-- Don't ajouter de fausse télémétrie, de faux terminal ou de démonstration annoncée comme publique sans URL réelle.
-- Don't animer à chaque sélection de projet, ajouter des halos ou employer `transition: all`.
-- Don't réduire un schéma jusqu’à rendre ses libellés illisibles.
+- Do conserver les contenus, intitulés et liens réels ; les données projets sont partagées dans src/data/projects.js.
+- Do tester le badge sans retour à la ligne à 320px et les deux thèmes.
+- Do utiliser le bleu pour la structure, pas pour fabriquer une affiliation officielle à EPITECH.
+- Don't remettre d’eyebrows au-dessus des titres, de numéros décoratifs de sections ou d’emoji en guise d’icônes.
+- Don't présenter le formulaire mailto comme un envoi réalisé par un serveur.

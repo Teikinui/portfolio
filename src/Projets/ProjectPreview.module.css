@@ -45,22 +45,5 @@
 .captureImage { width: 100%; height: auto; aspect-ratio: 8 / 5; outline: 1px solid oklch(1 0 0 / 0.1); outline-offset: -1px; }
 :global(:root[data-theme='light']) .captureImage { outline-color: oklch(0 0 0 / 0.1); }
 .screenshot:hover .captureToolbar, .screenshot:focus-visible .captureToolbar { background: var(--color-band); }
-.mobileSchema { display: none; }
-@media (max-width: 700px) {
-  .schema { display: none; }
-  .mobileSchema { display: block; padding: 24px 20px; color: var(--diagram-ink); }
-  .mobileTitle { margin-bottom: 24px; font-family: var(--font-heading); font-size: 20px; line-height: 1.3; letter-spacing: -.025em; }
-  .mobileNode { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 10px 12px; border: 1px solid var(--diagram-line); border-radius: var(--radius-sm); font-size: 14px; line-height: 1.5; }
-  .mobileNode img, .mobileWireguard img { width: 28px; height: 28px; object-fit: contain; }
-  .mobileNode small { display: block; font-size: 13px; color: var(--diagram-muted); margin-top: 2px; }
-  .mobileConnector { width: 1px; height: 20px; margin-left: 25px; background: var(--diagram-line); }
-  .mobileGateway { border-color: #f6ae73; }
-  .mobileNote { margin: 16px 0 0; font-size: 13px; line-height: 1.6; color: var(--diagram-muted); }
-  .mobileTunnel { display: flex; align-items: center; gap: 8px; min-height: 44px; padding-left: 16px; font-size: 13px; color: var(--diagram-muted); }
-  .mobileHost { padding: 16px; border: 1px solid var(--diagram-line); border-radius: var(--radius-md); }
-  .mobileHost > strong { display: block; margin-bottom: 16px; font-family: var(--font-heading); font-size: 16px; }
-  .mobileHost .mobileNode { border: 0; padding: 0; }
-  .mobileWireguard { display: flex; align-items: center; gap: 10px; padding: 8px 10px; margin-top: 8px; border-radius: var(--radius-sm); background: #f4f1e9; color: #142139; font-size: 14px; }
-}
 @media (max-width: 600px) { .captureToolbar { padding-inline: 16px; } }
 @media (max-width: 375px) { .board, .browserBar { padding-inline: 16px; } .offer { gap: 8px; } }

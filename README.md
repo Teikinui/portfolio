@@ -1,113 +1,108 @@
 # Portfolio — Teikinui Decian
 
-Portfolio React/Vite : projets, compétences, parcours, CV et contact.
+Portfolio personnel React/Vite : profil, projets, compétences, parcours, CV et contact.
 
-**Site :** [teikinui.github.io/portfolio](https://teikinui.github.io/portfolio/)
+**En ligne :** [teikinui.github.io/portfolio](https://teikinui.github.io/portfolio/)
 
-## Démarrer
+## Prérequis
 
-Prérequis : Git, Node.js 24 LTS recommandé et npm.
+Git, Node.js LTS récent compatible avec Vite 8 et npm. Installer les dépendances avec `npm install` avant de lancer les commandes du projet.
+
+```bash
+git --version
+node --version
+npm --version
+```
+
+## Télécharger et démarrer
 
 ```bash
 git clone https://github.com/Teikinui/portfolio.git
 cd portfolio
-npm ci
+npm install
 npm run dev
 ```
 
-Ouvrir l’URL Vite, généralement `http://localhost:5173/portfolio/`.
+Ouvrir l’adresse affichée par Vite, généralement `http://localhost:5173/portfolio/`. Laisser le terminal ouvert ; arrêter avec `Ctrl+C`. Après l’installation, seul `npm run dev` est nécessaire. Pour récupérer les mises à jour : `git pull`.
 
 ## Vérifier et publier
 
 ```bash
 npm run lint
 npm run build
-npm run test:e2e
+npm run preview
 npm run deploy
 ```
 
-Les tests utilisent Microsoft Edge sur Windows. Sur les autres systèmes, installer Chromium avec `npx playwright install chromium`. Playwright démarre son propre aperçu sur `127.0.0.1:4173` ; ce port doit être libre.
+`deploy` reconstruit le site puis publie `dist` sur la branche `gh-pages` du remote `origin`. Le préfixe `/portfolio/` est conservé. Les anciennes routes React redirigent vers leur section.
 
-`deploy` reconstruit le site et publie `dist` sur la branche `gh-pages`. Un push sur `main` seul ne met pas automatiquement le site en ligne à jour. Le préfixe GitHub Pages `/portfolio/` est conservé.
+## Direction visuelle et intégration Impeccable
 
-## Direction visuelle
+La refonte globale utilise **Impeccable 4.8.2 exclusivement** : couverture bleue, régions papier/beige en clair, surfaces encre en sombre, dossiers de projets, compétences en colonnes, parcours bleu et contact coordonné. Le contenu, les 24 titres, les liens et les fonctionnalités sont conservés. EPITECH Paris reste identifié par son nom réel, sans logo officiel inventé.
 
-Refonte complète avec **Impeccable** et **make-interfaces-feel-better**. Objectif confirmé : montrer la maîtrise technique, sans conserver l’ancienne identité. L’utilisateur a choisi **Galerie d’ingénierie** sur la page de décision, puis autorisé le remplacement de la documentation du système.
+- `PRODUCT.md` consigne les faits et contraintes.
+- `DESIGN.md` décrit le système visuel. Le fichier dérivé `.impeccable/design.json` est désynchronisé et reste à régénérer avec la commande `document` d’Impeccable.
+- `.impeccable/surfaces/portfolio.md` consigne la composition et les limites de revue.
+- Installation utilisée : `npx impeccable install --providers=pi --scope=global --no-hooks --yes`. Le skill et son moteur restent dans le répertoire utilisateur, **pas dans le dépôt ni le bundle public**. En Pi, recharger les skills après installation.
+- Les consignes Hermes ont également été lues : pour une installation locale, Hermes exige `hermes skills trust` ; le hook optionnel s’active avec `hermes plugins enable impeccable-design-hook`. Aucun plugin Hermes n’est activé par ce projet.
+- Sans hook automatique Pi, un contrôle manuel Impeccable a été exécuté sur les sources et le rendu. Réserve conservée : Geist est signalée comme une police répandue ; six fins de paragraphes courtes sont signalées à titre consultatif. Aucune réserve de contraste bloquante détectée.
 
-- Ocre sur une grande région d’accueil ; sol minéral clair ou charbon végétal sombre.
-- Nouvelles fontes locales Onest et Public Sans.
-- Navigation latérale avec portrait et CV sur desktop ; barre sticky et menu sur mobile.
-- Cinq réalisations sélectionnables dès l’accueil, au clavier ou au pointeur, avec lien vers leur dossier.
-- Projets présentés par leurs visuels ; capture Candidatures agrandissable et grande mise en page dédiée.
-- Schémas Cloud/NAS recomposés sur téléphone pour garder des libellés lisibles.
-- Compétences, parcours et contact harmonisés, sans faux terminal ni télémétrie inventée.
-- Transitions courtes, pression à `scale(0.96)`, focus visible et réduction des mouvements.
+## Fonctionnement conservé
 
-`PRODUCT.md` contient les faits et contraintes, `DESIGN.md` les tokens et règles réellement livrés, `.impeccable/design.json` leurs extensions et exemples de composants. Le contrat de la route est dans `.impeccable/surfaces/portfolio.md`. Les outils et rapports de design ne sont pas chargés dans l’application publique.
+- Thème sombre initial, bascule clair/sombre et persistance `localStorage`, même si le stockage est bloqué.
+- Navigation sticky, menu mobile et fermeture par Échap, lien d’évitement et focus visible.
+- Cinq projets filtrables par technologie, dont **TripTrap**, un jeu de plateformes desktop en Java 21/libGDX ([dépôt GitHub](https://github.com/Teikinui/projet-jeu-java)), et **Candidatures**, une application React/Express/SQLite auto-hébergée de suivi d’alternance ([dépôt GitHub](https://github.com/Teikinui/suivi-alternance)). L’index du hero réinitialise le filtre puis rejoint le bon projet.
+- Chaque projet possède un visuel dédié : interface illustrative du job board « tanière » avec deux annonces du seed, parcours navigateur → Cloudflare Zero Trust → services Docker supervisés avec Arcane, et tunnel distant vers WireGuard exécuté dans Docker sur le NAS. Les logos des outils viennent de Simple Icons ; les schémas ne simulent aucun état de production. Sources : `public/projects/infrastructure/SOURCE.md`.
+- Candidatures présente une vraie capture du Kanban dans une mise en page pleine largeur. Le lien « Agrandir » ouvre la capture complète en haute résolution. La prise de vue utilise l’aperçu local du dépôt et six candidatures fictives en SQLite mémoire, sans données privées. Sources et méthode : `public/projects/candidatures/SOURCE.md`.
+- TripTrap possède une vignette pixel art composée des vrais sprites du niveau Tahiti (personnage, plateformes et pièges), cliquable vers son dépôt. Il s’agit d’une illustration statique, pas d’une capture ni d’une démo jouable. Provenance : `public/projects/triptrap/SOURCE.md`. Les URL manquantes restent explicitement non publiques/non renseignées ; les dépôts réels du job board et de TripTrap sont conservés.
+- Formulaire validant nom, e-mail et message, puis préparant un `mailto:`. **Aucun backend n’est configuré et aucun envoi n’est simulé.** L’envoi doit être confirmé dans l’application e-mail.
+- CV et photos conservés ; portrait WebP de 36 Kio, polices locales Geist et DM Sans, aucune requête de police externe à l’exécution.
+- Une entrée discrète du hero à contenu déjà visible, sans apparition répétitive des sections ; `prefers-reduced-motion` respecté.
 
-## Fonctionnalités
+## État de la dernière revue
 
-- Thèmes clair/sombre persistants ; sombre initial en l’absence de préférence enregistrée.
-- Galerie accessible : flèches gauche/droite, Home, End et sélection par boutons nommés.
-- Filtres technologiques ; ouvrir un dossier depuis l’accueil réinitialise les filtres.
-- Anciennes routes React redirigées vers les sections correspondantes.
-- Menu mobile, fermeture par Échap, retour du focus au bouton et lien d’évitement.
-- Formulaire avec validation, conservation des valeurs et correction des erreurs pendant la saisie.
-- Le formulaire prépare un `mailto:` : **aucun backend d’envoi et aucun envoi simulé**.
-- CV PDF et coordonnées réels conservés.
+Revue complète des sources React, des CSS Modules, des styles partagés et des animations, suivie de l’application des quatre corrections ci-dessous.
 
-## Réalisations et visuels
+### Vérifications exécutées
 
-| Projet | Aperçu | Code public |
-| --- | --- | --- |
-| Job board d’équipe | Vue illustrative « tanière », annonces du jeu de démonstration | [projet-jobboard](https://github.com/Teikinui/projet-jobboard) |
-| Sites et applications sécurisés | Schéma Cloudflare Zero Trust, Docker et Arcane | Non renseigné |
-| NAS et accès distant | Schéma du tunnel WireGuard dans Docker sur le NAS | Non renseigné |
-| TripTrap | Composition pixel art avec les sprites originaux de Tahiti | [projet-jeu-java](https://github.com/Teikinui/projet-jeu-java) |
-| Candidatures | Vraie capture du Kanban ; six candidatures fictives en SQLite mémoire | [suivi-alternance](https://github.com/Teikinui/suivi-alternance) |
+- Dépendances réinstallées avec `npm ci` ; npm signale trois vulnérabilités de sévérité modérée, non corrigées dans cette passe.
+- `npm run lint` et `npm run build` : succès après les corrections.
+- Captures du thème sombre inspectées à 390 et 1 440 px, avec un build temporaire à la racine pour le serveur de captures ; build `/portfolio/` régénéré ensuite.
+- Détecteur Impeccable exécuté sur les cinq fichiers source modifiés : réserves consultatives sur des tailles/couleurs non documentées, dont le nouveau contour blanc du portrait.
+- Restent à vérifier en interaction : thème clair, clavier, correction des erreurs du formulaire, survol/focus/pression, mouvement réduit et animations à 10 % de vitesse.
 
-Les aperçus ne sont pas des démos jouables. Les schémas ne prétendent pas montrer un état de production. Aucune candidature privée ni donnée personnelle tierce n’a été capturée.
+### Corrections appliquées
 
-Provenance :
+- **Formulaire :** les champs déjà invalides sont revalidés pendant la saisie, avec les mêmes règles qu’à la soumission ; les erreurs disparaissent dès correction.
+- **Icônes :** transition des icônes de thème et de menu par opacité, échelle et flou, sans rebond ni animation initiale ; changement instantané en mouvement réduit.
+- **Boutons :** pression à `scale(0.96)`, désactivée en mouvement réduit.
+- **Portrait :** contour intérieur blanc de 1 px à 10 % d’opacité sur la couverture bleue, dans les deux thèmes.
 
-- `public/projects/candidatures/SOURCE.md` : dépôt, révision, méthode et dimensions des captures.
-- `public/projects/triptrap/SOURCE.md` : origine des sept sprites du jeu.
-- `public/projects/infrastructure/SOURCE.md` : schémas, interface illustrative et logos Simple Icons.
-- `public/fonts/SOURCE.md` et licences OFL : nouvelles fontes auto-hébergées.
-- Portrait et CV : ressources utilisateur préexistantes, conservées.
+**État : quatre corrections implémentées ; validation des interactions en attente.**
 
-## Vérifications de la refonte
+## Vérifications de l’ajout Candidatures
 
-Commandes réellement exécutées :
+- `npm run lint` et build Vite : succès.
+- Captures du portfolio inspectées à 320, 390, 1 024 et 1 440 px en thème sombre : cinquième projet, index d’accueil et vignette agrandissable intégrés.
+- Vérification des données : cinq identifiants uniques, filtre SQLite, URL du dépôt, capture complète 1440×3137 et deux images de moins de 250 ko chacune.
+- Impeccable : scan manuel des six fichiers source modifiés ; 38 réserves consultatives de couleurs/tailles hors documentation, aucune sévérité bloquante signalée par ce scan.
+- Make-interfaces-feel-better : dimensions réservées pour éviter les décalages, chargement différé, contour neutre adapté au thème, cible d’agrandissement de 44 px et transition de couleur limitée à 150 ms. Aucun zoom ni animation répétitive sur la capture.
+- Les interactions clavier/souris, le thème clair et les animations à 10 % de vitesse n’ont pas été retestés pendant cet ajout.
 
-- `npm run lint` : succès.
-- `npm run build` : succès, bundle de production sous `/portfolio/`.
-- `npm run test:e2e` : **7 tests Edge réussis**.
+## Historique des contrôles de la refonte
 
-Périmètre navigateur :
+Les résultats ci-dessous sont ceux consignés lors de la refonte précédente ; ils n’ont pas été reproduits pendant la dernière revue.
 
-- 320, 390, 768, 1 024 et 1 440 px, dans les deux thèmes ; fontes chargées et absence de débordement horizontal global.
-- Galerie au clavier, toutes les pièces sur téléphone, filtres, réinitialisation et accès au bon dossier.
-- Capture agrandissable et CV servis ; identifiants SVG uniques même lorsque TripTrap apparaît deux fois.
-- Menu, focus, Échap, persistance du thème, ancienne route Contact et mouvement réduit.
-- Erreurs du formulaire corrigées pendant la saisie, préparation honnête du message et invalidation du brouillon à la modification.
-- Focus et pression observés avec transitions CSS ralenties à 10 % par CDP, puis sous mouvement réduit.
-- Axe WCAG A/AA à 390 et 1 440 px, dans les deux thèmes : aucune violation détectée dans les états testés. Ce contrôle n’est pas une certification complète d’accessibilité.
-
-Captures et revue dans `.impeccable/review/`, traces dans `test-results/` ; ces sorties sont ignorées par Git. Revue finale et documentation effectuées dans le fil principal, sans sous-agent. Verdict de la revue visuelle : **ship** sur le périmètre inspecté.
-
-Le détecteur Impeccable a été exécuté une seule fois sur les sources avant l’extraction finale du système. Il signalait deux polices absentes de l’ancien DESIGN.md et 90 avis de couleurs/tailles ; les nouvelles polices et la palette approuvée sont désormais documentées. Les couleurs propres aux projets ne sont pas remplacées pour uniformiser artificiellement leurs aperçus. Le scan n’a pas été relancé après documentation.
-
-L’installation npm signale **trois vulnérabilités de sévérité modérée**. Elles n’ont pas été corrigées automatiquement dans cette refonte visuelle. Les gestes tactiles physiques, Safari et Firefox n’ont pas été testés.
+- `npm run lint` et `npm run build` avaient réussi. ESLint exclut les ressources d’outils tiers dans `.agents` et les sorties `.impeccable`, pas le code de l’application.
+- Edge/Playwright sur le build : contenu des 24 titres inchangé, thèmes, stockage bloqué, filtres, ancres du hero après filtrage, erreurs et préparation du formulaire, CV PDF, portrait, ancienne route, menu mobile, Échap, focus et mouvement réduit/normal.
+- Largeurs 320, 375, 390, 600, 701, 768, 820, 1 024, 1 280 et 1 440 px, dans les deux thèmes : aucune coupure de titre, aucun débordement horizontal, badge sur une ligne.
+- Axe WCAG A/AA à 320, 390, 768 et 1 440 px, dans les deux thèmes : aucune violation détectée. Ce contrôle automatisé n’est pas une certification complète d’accessibilité.
+- Des captures avaient été consignées dans `.impeccable/review/` (ignorées par Git). Ce dossier est absent de la copie locale inspectée lors de la dernière revue ; ces captures n’ont donc pas pu être consultées.
 
 ## Structure
 
-- `src/Accueil` : introduction, galerie et profil détaillé.
-- `src/Menu` : navigation, portrait, thèmes et menu mobile.
-- `src/Projets` : filtres, dossiers et composants d’aperçu.
-- `src/Competences`, `src/Parcours`, `src/Contact` : sections et CSS Modules.
-- `src/data/projects.js` : source commune des cinq projets.
-- `src/components` : composants partagés et SVG d’interface.
-- `src/index.css`, `src/App.css` : tokens, fontes et styles communs.
-- `tests`, `playwright.config.js` : tests navigateur et accessibilité.
-- `public` : CV, portrait, captures, sprites, logos et fontes locales.
+- `src/Accueil`, `src/Projets`, `src/Competences`, `src/Parcours`, `src/Contact` : sections et CSS Modules.
+- `src/Menu` : navigation et thème.
+- `src/components` : Section, Card et iconographie SVG partagée.
+- `src/data/projects.js` : données réelles communes au hero et à la liste de projets.
+- `public` : photos, CV, favicon et polices locales avec licences.

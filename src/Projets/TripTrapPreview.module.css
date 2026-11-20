@@ -3,7 +3,6 @@
   --game-sky: #8fdcdd;
   position: relative;
   display: block;
-  width: 100%;
   min-width: 0;
   overflow: hidden;
   aspect-ratio: 8 / 5;

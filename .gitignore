@@ -41,7 +41,3 @@ pnpm-debug.log*
 .impeccable/live/sessions/
 .impeccable/live/cache/
 .impeccable/live/server.json
-
-# Tests navigateur
-/test-results/
-/playwright-report/
