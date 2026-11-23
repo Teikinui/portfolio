@@ -2,9 +2,9 @@
 
 Portfolio React/Vite : cinq projets, compétences, parcours, CV et formulaire de contact.
 
-## Branche de travail
+## Version principale
 
-**`modification-design` : Studio technique beige et bleu.** Cette proposition n’est pas déployée sur le site principal. Le choix a été confirmé par l’utilisateur ; l’identité ocre/verte et la navigation latérale ont été écartées.
+**Studio technique beige et bleu.** Version issue de `modification-design`, validée par l’utilisateur pour fusion et publication sur le site principal. Le choix a été confirmé par l’utilisateur ; l’identité ocre/verte et la navigation latérale ont été écartées.
 
 - Papier beige dominant, encre marine, grandes régions bleues pour les compétences et le contact.
 - Titres Manrope locaux, corps DM Sans et navigation horizontale.
@@ -77,9 +77,9 @@ Limites : Safari, Firefox et gestes sur un téléphone physique non vérifiés. 
 
 ## Publication
 
-Le site public reste [teikinui.github.io/portfolio](https://teikinui.github.io/portfolio/), sur la version précédente.
+Site public : [teikinui.github.io/portfolio](https://teikinui.github.io/portfolio/).
 
-**Ne pas lancer `npm run deploy` pour une simple prévisualisation de cette branche** : cette commande reconstruit et remplace le site principal via `gh-pages`. La proposition doit être validée avant fusion et publication. Un push sur `modification-design` ne publie pas automatiquement le site.
+Après vérification, pousser `main`, puis lancer `npm run deploy` pour reconstruire et publier via `gh-pages`. Un push seul ne déploie pas automatiquement le site. Ne pas lancer cette commande pour une simple prévisualisation d’une branche expérimentale.
 
 ## Structure
 

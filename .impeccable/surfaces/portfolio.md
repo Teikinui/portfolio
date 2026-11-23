@@ -1,6 +1,6 @@
 # Portfolio — Studio technique
 
-Primary target: src/App.jsx. Mode: Experience. Travail expérimental sur modification-design ; aucun déploiement du site principal sans demande.
+Primary target: src/App.jsx. Mode: Experience. Version issue de modification-design, validée par l’utilisateur pour fusion sur main et publication principale.
 
 ## Direction contract
 
@@ -18,4 +18,4 @@ Primary target: src/App.jsx. Mode: Experience. Travail expérimental sur modific
 
 ## Contraintes et revue
 
-Préserver contenu factuel, thèmes persistants, filtres, ancres, anciennes routes, CV et formulaire mailto. Le thème clair beige est initial sans préférence enregistrée ; l’accueil garde son papier beige dans les deux thèmes. Visuels existants et provenance sous public/projects conservés. Revue et documentation dans le fil principal, sans outil de sous-agent autonome. Ne pousser que modification-design ; main et GitHub Pages restent inchangés.
+Préserver contenu factuel, thèmes persistants, filtres, ancres, anciennes routes, CV et formulaire mailto. Le thème clair beige est initial sans préférence enregistrée ; l’accueil garde son papier beige dans les deux thèmes. Visuels existants et provenance sous public/projects conservés. Revue et documentation dans le fil principal, sans outil de sous-agent autonome. L’utilisateur a autorisé la fusion sur main et la publication GitHub Pages de cette version simplifiée.

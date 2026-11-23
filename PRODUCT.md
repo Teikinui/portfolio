@@ -21,7 +21,7 @@ Présenter les projets, compétences, expériences et formations de Teikinui, do
 - Navigation sticky, menu mobile, filtres technologiques, thèmes clair/sombre persistants (clair initial sur la proposition beige/bleu), réduction des animations et navigation clavier à conserver.
 - Le formulaire valide les champs puis prépare un lien `mailto:`. Aucun backend d’envoi ; ne pas présenter un message prêt comme envoyé.
 - Textes, liens existants et cinq projets à conserver. Aucune expérience, qualification, entreprise ou performance à inventer.
-- Proposition actuelle sur modification-design : vérifier, commiter et pousser cette branche seulement. Ne pas fusionner main ni publier GitHub Pages sans demande de l’utilisateur.
+- Version Studio technique validée par l’utilisateur pour publication principale : vérifier, commiter et pousser main, publier avec npm run deploy, puis contrôler les assets servis.
 
 ## Brand Commitments
 
