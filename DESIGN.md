@@ -109,7 +109,7 @@ Titres équilibrés, approche légèrement resserrée ; corps à interligne gén
 
 Conteneur centré de 1248px maximum : marges de 48px, puis 32px sous 1000px, 24px sous 800px et 20px sous 600px. Sections espacées de 64 à 112px. Navigation sticky haute de 80px, puis 72px sous 800px.
 
-Composition asymétrique : grand titre et portrait, puis preuve visuelle et texte de profil. Les dossiers alternent texte et visuel sur desktop ; Candidatures conserve son aperçu pleine largeur. Sous 800px, retour à une colonne ; le texte précède alors le visuel. Les schémas techniques adoptent une lecture verticale sous 700px.
+Accueil simple : grand titre, portrait, présentation et actions, sans aperçu de projet. Les dossiers alternent texte et visuel sur desktop ; Candidatures conserve son aperçu pleine largeur. Sous 800px, retour à une colonne ; le texte précède alors le visuel. Les schémas techniques adoptent une lecture verticale sous 700px.
 
 ## Elevation & Depth
 
@@ -139,11 +139,11 @@ Champs marine et textes clairs dans la région Contact. Libellés permanents, ai
 
 ### Navigation
 
-Navigation horizontale, monogramme bleu, nom, accès aux sections, CV et thème. Sous 800px, menu dépliable avec fermeture par Échap et retour du focus. L’index des cinq réalisations réinitialise les filtres et atteint le bon dossier.
+Navigation horizontale, monogramme bleu, nom, accès aux sections, CV et thème. Sous 800px, menu dépliable avec fermeture par Échap et retour du focus. Le bouton Voir mes projets réinitialise les filtres et atteint la section Projets.
 
 ### Project evidence
 
-Capture Candidatures agrandissable ; chargement prioritaire dans l’accueil, différé dans le dossier. Portrait réel conservé. Les schémas de principe et la vue illustrative du job board ne sont pas présentés comme des captures de production.
+Capture Candidatures agrandissable, uniquement dans la section Projets, avec chargement différé. Portrait réel conservé. Les schémas de principe et la vue illustrative du job board ne sont pas présentés comme des captures de production.
 
 ## Do's and Don'ts
 

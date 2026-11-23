@@ -10,7 +10,7 @@ Primary target: src/App.jsx. Mode: Experience. Travail expérimental sur modific
 
 **STORY** — Comprendre le profil cloud, voir les réalisations et leurs détails, lire le parcours, télécharger le CV et contacter le candidat. Les cinq projets, leurs preuves et les fonctions restent présents.
 
-**FIRST VIEWPORT** — Grand titre et portrait réel dans une composition asymétrique ; profil, disponibilité et CTA visibles. Un index compact donne accès aux cinq dossiers et réinitialise les filtres. Les réalisations alternent grands visuels et descriptions, sans carrousel.
+**FIRST VIEWPORT** — Accueil simple demandé par l’utilisateur : titre, portrait, présentation, disponibilité et boutons, sans aperçu ni index de projets. Le bouton Voir mes projets réinitialise les filtres et atteint la section dédiée. Candidatures apparaît uniquement dans son dossier de la section Projets. Les réalisations alternent grands visuels et descriptions, sans carrousel.
 
 **FORM** — Direction « Studio technique » explicitement choisie par l’utilisateur, beige/bleu imposés, navigation haute et absence de rail. Le choix utilisateur prime sur le tirage de contrôle seed:9702eb95aac1fb4a. Code-led, sans comp généré ni image fictive.
 

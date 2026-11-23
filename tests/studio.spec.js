@@ -15,6 +15,10 @@ for (const theme of ['light', 'dark']) {
       await expect(page.locator('#home-title')).toBeVisible();
       await expect(page.locator('#accueil .button').first()).toBeInViewport({ ratio: 1 });
       await expect(page.locator('#projets article')).toHaveCount(5);
+      await expect(page.locator('#accueil img')).toHaveCount(1);
+      await expect(page.locator('#accueil img')).toHaveAttribute('src', /photo_profil\.webp$/);
+      await expect(page.locator('img[src$="interface-kanban.jpg"]')).toHaveCount(1);
+      await expect(page.locator('#projet-05 img[src$="interface-kanban.jpg"]')).toBeVisible();
       expect(await page.evaluate(() => document.fonts.check('600 24px Manrope'))).toBe(true);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       await page.screenshot({ path: `${review}/studio-${theme}-${width}.png`, fullPage: true });
@@ -37,10 +41,10 @@ test('Filtres, ancres et ressources conservées', async ({ page, request }) => {
   await page.goto('./');
   await page.getByRole('button', { name: 'Docker', exact: true }).click();
   await expect(page.locator('#projets article')).toHaveCount(3);
-  await page.getByRole('navigation', { name: 'Accès aux projets' }).getByRole('link', { name: 'TripTrap — jeu vidéo en Java' }).click();
+  await page.getByRole('link', { name: 'Voir mes projets', exact: true }).click();
   await expect(page.locator('#projets article')).toHaveCount(5);
-  await expect(page.locator('#projet-04')).toBeInViewport();
-  await expect(page.locator('#projet-04')).toBeFocused();
+  await expect(page.locator('#projets')).toBeInViewport();
+  await expect(page.locator('#projets')).toBeFocused();
   for (const path of ['CV/CV_Teikinui_DECIAN_Cloud.pdf', 'projects/candidatures/interface-complete.png', 'fonts/manrope-variable.ttf']) {
     expect((await request.get(path)).ok()).toBe(true);
   }

@@ -101,7 +101,7 @@ function NasPreview() {
   );
 }
 
-function CandidaturesPreview({ priority }) {
+function CandidaturesPreview() {
   const base = `${import.meta.env.BASE_URL}projects/candidatures/`;
   return (
     <a className={`${styles.frame} ${styles.screenshot}`} href={`${base}interface-complete.png`}
@@ -113,18 +113,18 @@ function CandidaturesPreview({ priority }) {
       </span>
       <img className={styles.captureImage} src={`${base}interface-kanban.jpg`}
         alt="Interface Kanban de Candidatures : recherche, filtres et cinq colonnes de suivi, de À postuler à Refusé."
-        width="1440" height="900" loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} decoding="async" />
+        width="1440" height="900" loading="lazy" decoding="async" />
     </a>
   );
 }
 
-export default function ProjectPreview({ project, priority = false }) {
+export default function ProjectPreview({ project }) {
   switch (project.preview) {
     case 'jobboard': return <JobBoardPreview href={project.github} />;
     case 'cloud': return <CloudPreview />;
     case 'nas': return <NasPreview />;
     case 'triptrap': return <TripTrapPreview href={project.github} />;
-    case 'candidatures': return <CandidaturesPreview priority={priority} />;
+    case 'candidatures': return <CandidaturesPreview />;
     default: return null;
   }
 }

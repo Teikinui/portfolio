@@ -8,7 +8,7 @@ Portfolio React/Vite : cinq projets, compétences, parcours, CV et formulaire de
 
 - Papier beige dominant, encre marine, grandes régions bleues pour les compétences et le contact.
 - Titres Manrope locaux, corps DM Sans et navigation horizontale.
-- Accueil asymétrique : grand titre, portrait réel, actions immédiatement accessibles et capture Candidatures agrandissable.
+- Accueil simple : grand titre, portrait réel, présentation et boutons. Aucun aperçu de projet dans l’accueil ; Candidatures reste dans la section Projets.
 - Dossiers alternant descriptions et grands visuels ; Candidatures en pleine largeur.
 - Schémas techniques verticaux sur téléphone, plutôt que libellés SVG trop réduits.
 - Thème clair initial sans préférence enregistrée ; préférence claire/sombre persistante. L’accueil reste beige dans les deux modes.
@@ -36,8 +36,8 @@ Playwright utilise Microsoft Edge sur Windows. Ailleurs, installer Chromium avec
 
 ## Fonctionnalités conservées
 
-- Cinq projets, filtres technologiques et index de navigation vers chaque dossier.
-- Réinitialisation des filtres lors d’un accès depuis l’accueil ; arrivée et focus sur le bon dossier.
+- Cinq projets et filtres technologiques dans la section Projets.
+- Le bouton Voir mes projets réinitialise les filtres et place le focus sur cette section.
 - CV PDF, liens GitHub/LinkedIn, coordonnées et contenu factuel conservés.
 - Navigation sticky, menu mobile, Échap et retour du focus au bouton.
 - Anciennes routes React redirigées vers les sections.
@@ -65,7 +65,8 @@ Commandes exécutées : lint et build réussis ; **6 tests Playwright Edge réus
 
 - Deux thèmes aux largeurs 320, 390, 768, 820, 1024 et 1440px : fontes chargées, cinq dossiers présents, absence de débordement horizontal et action principale entièrement dans le premier écran.
 - Axe WCAG A/AA à 390 et 1440px, dans les deux thèmes : aucune violation détectée dans les états testés. Ce n’est pas une certification exhaustive d’accessibilité.
-- Filtres, réinitialisation, ancre, focus du dossier, CV PDF, image agrandie et police locale servis.
+- Filtres, réinitialisation, ancre et focus de la section Projets, CV PDF, image agrandie et police locale servis.
+- Un seul portrait dans l’accueil ; une seule capture Candidatures, exclusivement dans son dossier.
 - Menu mobile, Échap, persistance du thème et ancienne route Contact.
 - Formulaire invalide puis valide, brouillon mailto et invalidation après modification.
 - Focus, pression CSS ralentie à 10 % via CDP et absence de transformation sous mouvement réduit.
