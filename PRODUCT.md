@@ -18,23 +18,24 @@ Présenter les projets, compétences, expériences et formations de Teikinui, do
 
 - React 19, Vite, React Router, CSS Modules, Framer Motion existants ; pas de remplacement de stack.
 - Publication GitHub Pages sur `/portfolio/`, anciennes routes redirigées vers les sections.
-- Navigation sticky, menu mobile, filtres technologiques, thèmes clair/sombre persistants (sombre initial), réduction des animations et navigation clavier à conserver.
+- Navigation sticky, menu mobile, filtres technologiques, thèmes clair/sombre persistants (clair initial sur la proposition beige/bleu), réduction des animations et navigation clavier à conserver.
 - Le formulaire valide les champs puis prépare un lien `mailto:`. Aucun backend d’envoi ; ne pas présenter un message prêt comme envoyé.
-- Textes, liens existants et trois projets à conserver. Aucune expérience, qualification, entreprise ou performance à inventer.
-- Après vérification : commit ciblé sur main, push origin/main, publication avec npm run deploy, contrôle des branches et assets servis.
+- Textes, liens existants et cinq projets à conserver. Aucune expérience, qualification, entreprise ou performance à inventer.
+- Proposition actuelle sur modification-design : vérifier, commiter et pousser cette branche seulement. Ne pas fusionner main ni publier GitHub Pages sans demande de l’utilisateur.
 
 ## Brand Commitments
 
-Teikinui Decian, étudiant en Master of Science Cloud à EPITECH Paris. Conserver le nom de l’établissement et le parcours exacts ; ne pas fabriquer de logo officiel, d’agrément ou de partenariat. Voix française, concrète et professionnelle. L’utilisateur remplace la précédente référence de design par Impeccable exclusivement et demande une refonte de tout le site.
+Teikinui Decian, étudiant en Master of Science Cloud à EPITECH Paris. Conserver le nom de l’établissement et le parcours exacts ; ne pas fabriquer de logo officiel, d’agrément ou de partenariat. Voix française, concrète et professionnelle. L’utilisateur demande une refonte de tout le site avec Impeccable et make-interfaces-feel-better.
 
-La préférence beige antérieure reste un repère d’identité personnel ; elle peut vivre dans le thème clair et les surfaces secondaires, sans empêcher une nouvelle composition et un rôle plus affirmé du bleu académique.
+Préférence explicite : beige et bleu. La proposition Studio technique a été choisie : beige clair dominant, bleu profond, grands titres, projets visuels et navigation haute sans rail latéral. L’identité ocre/verte précédente a été rejetée.
 
 ## Evidence on Hand
 
 - Textes dans src/Accueil, src/Projets, src/Competences, src/Parcours et src/Contact.
 - Portrait public/photo_profil.webp et photo originale conservée.
 - CV public/CV/CV_Teikinui_DECIAN_Cloud.pdf.
-- Dépôt public du job board ; deux projets d’infrastructure sans démonstration ou dépôt public renseigné.
+- Dépôts publics du job board, de TripTrap et de Candidatures ; deux projets d’infrastructure sans démonstration ou dépôt public renseigné.
+- Capture réelle de Candidatures avec données fictives isolées, sprites TripTrap et schémas de principe ; provenance sous public/projects.
 - Coordonnées GitHub, LinkedIn et e-mail existantes.
 
 ## Product Principles

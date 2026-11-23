@@ -1,24 +1,77 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-12T12:00:00Z",
-  "title": "Design System: Teikinui Decian",
+  "generatedAt": "2026-11-20",
+  "title": "Design System: Portfolio — Studio technique",
   "extensions": {
-    "motion": [{"name":"ease","value":"cubic-bezier(.16,1,.3,1)","purpose":"Retour discret des états et entrée unique du hero, contenu déjà visible."}],
-    "breakpoints": [{"name":"wide","value":"1000px"},{"name":"navigation","value":"800px"},{"name":"form","value":"700px"},{"name":"phone","value":"600px"}],
-    "shadows": []
+    "colorMeta": {
+      "blue": { "role": "primary", "displayName": "Bleu profond", "canonical": "#174687", "tonalRamp": ["#101d32", "#112f5b", "#174687", "#3268ad", "#638ec4", "#9eb9dc", "#cbdcf0", "#eff4fb"] },
+      "navy": { "role": "primary", "displayName": "Marine", "canonical": "#112f5b", "tonalRamp": ["#0d182a", "#112f5b", "#1a4580", "#3664a2", "#6c8bb8", "#a2b8d5", "#d0ddec", "#f0f4f9"] },
+      "beige": { "role": "neutral", "displayName": "Papier beige", "canonical": "#f3ede2", "tonalRamp": ["#26231e", "#494338", "#6b6253", "#8c8170", "#afa28e", "#cfc2ae", "#e6dccd", "#f3ede2"] },
+      "ivory": { "role": "neutral", "displayName": "Ivoire", "canonical": "#fffaf1", "tonalRamp": ["#27231d", "#494236", "#6c6151", "#90816e", "#b2a38f", "#d3c4b0", "#ece1d0", "#fffaf1"] },
+      "band": { "role": "neutral", "displayName": "Bande papier", "canonical": "#e9e0d1", "tonalRamp": ["#26221c", "#484034", "#6a5e4f", "#8b7c69", "#ad9e89", "#cdbfa9", "#e9e0d1", "#faf7f0"] },
+      "ink": { "role": "neutral", "displayName": "Encre marine", "canonical": "#17365f", "tonalRamp": ["#101c2d", "#17365f", "#2a5080", "#4a709e", "#7b96b7", "#a9bdd4", "#d4dfec", "#f1f5fa"] },
+      "muted": { "role": "neutral", "displayName": "Encre secondaire", "canonical": "#526078", "tonalRamp": ["#191e28", "#343e50", "#526078", "#71819b", "#94a1b7", "#b9c3d2", "#dbe1e9", "#f3f5f8"] },
+      "accent": { "role": "primary", "displayName": "Bleu des liens", "canonical": "#204f9d", "tonalRamp": ["#101d34", "#183664", "#204f9d", "#4775bb", "#779bd0", "#a7bfdf", "#d1dff1", "#f0f5fc"] },
+      "line": { "role": "neutral", "displayName": "Filet beige", "canonical": "#c9c1b3", "tonalRamp": ["#25221e", "#464139", "#676056", "#898071", "#aaa08f", "#c9c1b3", "#e5dfd5", "#f7f4ee"] },
+      "dark-paper": { "role": "neutral", "displayName": "Sol nocturne", "canonical": "#0e1c30", "tonalRamp": ["#0e1c30", "#23364f", "#3c526e", "#5d748f", "#8597ae", "#acbacc", "#d2dce7", "#f0f4f9"] },
+      "dark-surface": { "role": "neutral", "displayName": "Surface nocturne", "canonical": "#172941", "tonalRamp": ["#101d2e", "#172941", "#334b69", "#56718f", "#8298b0", "#acbdcf", "#d3dee9", "#f1f5f9"] },
+      "dark-ink": { "role": "neutral", "displayName": "Encre ivoire", "canonical": "#f3ede2", "tonalRamp": ["#26231e", "#494338", "#6b6253", "#8c8170", "#afa28e", "#cfc2ae", "#e6dccd", "#f3ede2"] },
+      "dark-muted": { "role": "neutral", "displayName": "Texte nocturne secondaire", "canonical": "#b8c7df", "tonalRamp": ["#172130", "#303f56", "#4b607f", "#7086a5", "#94a8c4", "#b8c7df", "#d7e1ef", "#f2f6fb"] },
+      "dark-accent": { "role": "primary", "displayName": "Bleu lumineux", "canonical": "#b2ceff", "tonalRamp": ["#111e36", "#1c3968", "#325895", "#527ebd", "#7da4dc", "#b2ceff", "#d7e5fc", "#f1f6ff"] },
+      "dark-line": { "role": "neutral", "displayName": "Filet nocturne", "canonical": "#4b5e79", "tonalRamp": ["#17202e", "#2e3c52", "#4b5e79", "#6c819e", "#92a4bb", "#b8c5d5", "#dbe3ed", "#f3f6fa"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Manrope", "purpose": "Grand titre, graisse 600, approche resserrée." },
+      "body": { "displayName": "DM Sans", "purpose": "Texte courant et contrôles, auto-hébergé." }
+    },
+    "shadows": [{ "name": "project-evidence", "value": "0 8px 24px rgb(17 47 91 / .06)", "purpose": "Ombre légère des aperçus de projet." }],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.16,1,.3,1)", "purpose": "Feedback et entrée unique du profil." },
+      { "name": "press", "value": "scale(0.96)", "purpose": "Pression des actions, désactivée sous mouvement réduit." }
+    ],
+    "breakpoints": [{ "name": "medium", "value": "1000px" }, { "name": "navigation", "value": "800px" }, { "name": "diagram", "value": "700px" }, { "name": "small", "value": "600px" }]
   },
   "components": [
-    {"name":"Bouton principal","kind":"button","refersTo":"button-primary","description":"Action explicite de 48px minimum.","html":"<button class=\"ds-button\">Voir mes projets</button>","css":".ds-button{font:500 15px sans-serif;min-height:48px;padding:12px 20px;border:1px solid var(--color-button);border-radius:4px;background:var(--color-button);color:var(--color-button-ink)}.ds-button:hover{filter:brightness(.95)}.ds-button:focus-visible{outline:3px solid var(--color-accent);outline-offset:5px}"},
-    {"name":"Bouton secondaire","kind":"button","description":"Action secondaire sur le fond de sa région.","html":"<button class=\"ds-secondary\">Télécharger mon CV</button>","css":".ds-secondary{font:500 15px sans-serif;min-height:48px;padding:12px 20px;border:1px solid var(--color-line);border-radius:4px;background:transparent;color:var(--color-ink)}.ds-secondary:hover{border-color:var(--color-accent)}.ds-secondary:focus-visible{outline:3px solid var(--color-accent);outline-offset:5px}"},
-    {"name":"Champ de contact","kind":"input","description":"Label visible, texte 16px et erreur liée sous le champ.","html":"<label class=\"ds-label\">Votre nom<input class=\"ds-input\" autocomplete=\"name\"></label>","css":".ds-label{display:grid;gap:8px;color:var(--color-ink);font:14px sans-serif}.ds-input{min-height:48px;padding:12px 16px;font:16px sans-serif;border:1px solid var(--color-line);border-radius:4px;background:var(--color-paper);color:var(--color-ink)}.ds-input:focus-visible{outline:3px solid var(--color-accent);outline-offset:5px}"},
-    {"name":"Filtre technologique","kind":"chip","description":"Un choix actif, jamais une tabulation automatique.","html":"<button class=\"ds-filter\" aria-pressed=\"true\">Docker</button>","css":".ds-filter{min-height:44px;padding:8px 16px;border:1px solid var(--color-line);border-radius:4px;background:transparent;color:var(--color-muted)}.ds-filter[aria-pressed=true]{background:var(--color-button);color:var(--color-button-ink)}.ds-filter:focus-visible{outline:3px solid var(--color-accent);outline-offset:5px}"},
-    {"name":"Lien de navigation","kind":"nav","description":"Lien souligné par état actif et menu accessible sous 800px.","html":"<a class=\"ds-nav\" href=\"#projets\">Projets</a>","css":".ds-nav{display:inline-flex;align-items:center;min-height:44px;font:14px sans-serif;color:var(--color-muted);text-decoration:none}.ds-nav:hover{color:var(--color-ink);text-decoration:underline}.ds-nav:focus-visible{outline:3px solid var(--color-accent);outline-offset:5px}"}
+    {
+      "name": "Action principale", "kind": "button", "refersTo": "button-primary", "description": "Action remplie, focus explicite et pression mesurée.",
+      "html": "<button class=\"ds-primary\">Voir mes projets <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M6 18 18 6M6 6h12v12\"/></svg></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;gap:20px;min-height:48px;padding:12px 20px;background:var(--color-button,#174687);color:var(--color-button-ink,#fffaf1);border:1px solid transparent;border-radius:var(--radius-sm,6px);font-family:var(--font-body,sans-serif);font-size:15px;font-weight:500;cursor:pointer;transition:background-color 160ms,transform 160ms}.ds-primary:hover{background:color-mix(in srgb,var(--color-button,#174687),var(--color-button-ink,#fffaf1) 10%)}.ds-primary:focus-visible{outline:3px solid var(--color-accent,#204f9d);outline-offset:5px}.ds-primary:active{transform:scale(.96)}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}.ds-primary:active{transform:none}}"
+    },
+    {
+      "name": "Action secondaire", "kind": "button", "refersTo": "button-secondary", "description": "Action transparente avec filet structurel.",
+      "html": "<button class=\"ds-secondary\">Télécharger mon CV</button>",
+      "css": ".ds-secondary{min-height:48px;padding:12px 20px;background:transparent;color:var(--color-ink,#17365f);border:1px solid var(--color-line,#c9c1b3);border-radius:var(--radius-sm,6px);font-family:var(--font-body,sans-serif);font-size:15px;font-weight:500;cursor:pointer;transition:background-color 160ms,transform 160ms}.ds-secondary:hover{background:var(--color-band,#e9e0d1)}.ds-secondary:focus-visible{outline:3px solid var(--color-accent,#204f9d);outline-offset:5px}.ds-secondary:active{transform:scale(.96)}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}.ds-secondary:active{transform:none}}"
+    },
+    {
+      "name": "Champ Contact", "kind": "input", "refersTo": "input", "description": "Champ permanent sur surface marine.",
+      "html": "<label class=\"ds-field\">Votre nom <input placeholder=\"Votre nom\" autocomplete=\"name\"></label>",
+      "css": ".ds-field{display:grid;gap:8px;padding:24px;background:#173b6b;color:#fffaf1;font-family:var(--font-body,sans-serif);font-size:14px}.ds-field input{min-height:48px;padding:12px 16px;background:#112f5b;color:#fffaf1;border:1px solid #6d8cb6;border-radius:4px;font:inherit;font-size:16px}.ds-field input::placeholder{color:#d0def4}.ds-field input:focus-visible{outline:3px solid #bed5ff;outline-offset:5px}.ds-field input[aria-invalid=true]{border-color:#ffc8bb}"
+    },
+    {
+      "name": "Navigation haute", "kind": "nav", "description": "Sections horizontales avec état courant souligné.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#accueil\" aria-current=\"location\">Accueil</a><a href=\"#projets\">Projets</a><a href=\"#contact\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:24px;font-family:var(--font-body,sans-serif);font-size:14px}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--color-muted,#526078);border-bottom:2px solid transparent;transition:color 150ms}.ds-nav a:hover,.ds-nav a[aria-current]{color:var(--color-ink,#17365f);border-color:var(--color-accent,#204f9d)}.ds-nav a:focus-visible{outline:3px solid var(--color-accent,#204f9d);outline-offset:5px}"
+    },
+    {
+      "name": "Filtre technologique", "kind": "chip", "description": "État sélectionné rempli, cible tactile de 44px.",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"true\">Tous</button><button class=\"ds-chip\" aria-pressed=\"false\">Docker</button>",
+      "css": ".ds-chip{min-height:44px;padding:8px 16px;margin:4px;border:1px solid var(--color-line,#c9c1b3);border-radius:4px;background:transparent;color:var(--color-muted,#526078);font-family:var(--font-body,sans-serif);font-size:14px;cursor:pointer;transition:border-color 150ms}.ds-chip[aria-pressed=true]{background:var(--color-button,#174687);color:var(--color-button-ink,#fffaf1);border-color:transparent}.ds-chip:hover{border-color:var(--color-accent,#204f9d)}.ds-chip:focus-visible{outline:3px solid var(--color-accent,#204f9d);outline-offset:5px}"
+    },
+    {
+      "name": "Formation", "kind": "card", "description": "Surface de lecture structurée par un filet, pas par une ombre.",
+      "html": "<article class=\"ds-education\"><h3>Apprendre et progresser</h3><p>EPITECH Paris · Master of Science Cloud</p></article>",
+      "css": ".ds-education{padding:32px;border:1px solid var(--color-line,#c9c1b3);border-radius:var(--radius-md,10px);background:var(--color-surface,#fffaf1);color:var(--color-ink,#17365f);font-family:var(--font-body,sans-serif)}.ds-education h3{font-family:var(--font-heading,sans-serif);font-size:clamp(1.35rem,2.1vw,1.8rem);font-weight:600;line-height:1.25;letter-spacing:-.025em;margin:0 0 16px}.ds-education p{font-size:16px;line-height:1.75;margin:0}"
+    }
   ],
   "narrative": {
-    "northStar":"Le dossier de candidature technique",
-    "keyCharacteristics":["Couverture bleue","Contenus réels et lisibles","Iconographie SVG partagée","Thèmes persistants","Aucun envoi serveur simulé"],
-    "rules":[],
-    "dos":["Conserver les contenus et liens réels.","Vérifier les deux thèmes et la largeur 320px."],
-    "donts":["Ne pas inventer de logo officiel EPITECH.","Ne pas simuler un envoi backend."]
+    "northStar": "Studio technique",
+    "overview": "Un papier beige dominant et une encre marine, avec de grandes régions bleues pour les passages techniques. La typographie porte la structure ; les visuels montrent les réalisations, pas une interface de contrôle fictive. Le thème clair est initial sans préférence enregistrée ; le thème sombre conserve les contrastes et le papier beige de l’accueil.",
+    "keyCharacteristics": ["Beige dominant et bleu profond.", "Grands titres sans-serif, navigation horizontale.", "Réalisations visuelles, espacements généreux et densité variable.", "États explicites et mouvements mesurés."],
+    "rules": [
+      { "name": "The Evidence Rule", "body": "Les captures, sprites et schémas gardent leurs couleurs et leur provenance. Ne pas recolorer artificiellement un projet pour le faire entrer dans la palette.", "section": "colors" },
+      { "name": "The Reading Rule", "body": "Recomposer les schémas sur téléphone plutôt que réduire leurs libellés jusqu’à les rendre illisibles.", "section": "typography" }
+    ],
+    "dos": ["Do garder le beige dominant et employer le bleu à l’échelle de régions entières.", "Do conserver des visuels réels ou explicitement illustratifs.", "Do vérifier les deux thèmes, le clavier et les petits écrans."],
+    "donts": ["Don't reprendre la navigation latérale ou l’identité ocre/verte rejetées.", "Don't inventer des chiffres, des résultats ou des interfaces en production.", "Don't ajouter des effets de terminal, des néons ou des animations récurrentes aux sections."]
   }
 }

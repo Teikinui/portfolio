@@ -1,23 +1,21 @@
-# Portfolio — route principale
+# Portfolio — Studio technique
 
-Primary target: src/App.jsx. Mode: Experience, avec lecture de candidature par les recruteurs.
+Primary target: src/App.jsx. Mode: Experience. Travail expérimental sur modification-design ; aucun déploiement du site principal sans demande.
 
 ## Direction contract
 
-**THESIS** — Un dossier de candidature qui montre les réalisations réelles, pas une interface technique fictive. La refonte remplace les petites cartes répétées par une couverture et des dossiers détaillés.
+**THESIS** — Un studio technique personnel : beige dominant, bleu profond, vrais projets et lecture rapide. Ne pas reprendre la galerie ocre/verte ni sa navigation latérale, rejetées par l’utilisateur.
 
-**OWN-WORLD** — Bleu académique sur de grandes régions, papier beige en thème clair, encre bleutée en sombre, typographie sans-serif locale, contours fins et contrôles rectangulaires simples.
+**OWN-WORLD** — Papier beige, encre marine, bleu franc sur les régions techniques. Manrope pour les grands titres, DM Sans pour le corps. Typographie généreuse, contours fins, rayons mesurés et navigation horizontale.
 
-**STORY** — Comprendre le profil Cloud/EPITECH ; ouvrir les projets ; lire compétences et parcours ; télécharger le CV ou préparer un e-mail.
+**STORY** — Comprendre le profil cloud, voir les réalisations et leurs détails, lire le parcours, télécharger le CV et contacter le candidat. Les cinq projets, leurs preuves et les fonctions restent présents.
 
-**FIRST VIEWPORT** — Grand titre existant sur la couverture bleue, description factuelle, disponibilité sur une ligne, CTA accessibles, petit portrait réel et index fonctionnel des trois projets. Interaction signature : un lien de l’index réinitialise le filtre puis atteint le bon projet, y compris sur mobile. Une seule entrée du hero, sans contenu initialement invisible.
+**FIRST VIEWPORT** — Grand titre et portrait réel dans une composition asymétrique ; profil, disponibilité et CTA visibles. Un index compact donne accès aux cinq dossiers et réinitialise les filtres. Les réalisations alternent grands visuels et descriptions, sans carrousel.
 
-**FORM** — Dossier de candidature académique, candidat 7 de la liste ancrée dans le contexte. seed:712d3535fc7a1de7. Exécution directe en code, sans image générée, comme demandé par l’utilisateur pour avancer vers la livraison ; aucun choix utilisateur fictif enregistré.
+**FORM** — Direction « Studio technique » explicitement choisie par l’utilisateur, beige/bleu imposés, navigation haute et absence de rail. Le choix utilisateur prime sur le tirage de contrôle seed:9702eb95aac1fb4a. Code-led, sans comp généré ni image fictive.
 
 **FINISH** — unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
-## Provenance et revue
+## Contraintes et revue
 
-Les seules images de contenu sont le portrait et la photo originale déjà présents dans public ; aucune image ou preuve externe n’a été ajoutée. Les icônes SVG sont des pictogrammes d’interface, pas des logos tiers.
-
-Revue finale effectuée dans le fil principal faute d’outil de sous-agent. Captures locales et tests référencés dans README.md. Le détecteur relève le caractère répandu de Geist et quelques fins de paragraphes courtes ; ce sont des réserves de composition, pas des erreurs fonctionnelles ou de contraste. La police locale est conservée pour éviter une nouvelle régression typographique hors de la passe de correction demandée.
+Préserver contenu factuel, thèmes persistants, filtres, ancres, anciennes routes, CV et formulaire mailto. Le thème clair beige est initial sans préférence enregistrée ; l’accueil garde son papier beige dans les deux thèmes. Visuels existants et provenance sous public/projects conservés. Revue et documentation dans le fil principal, sans outil de sous-agent autonome. Ne pousser que modification-design ; main et GitHub Pages restent inchangés.

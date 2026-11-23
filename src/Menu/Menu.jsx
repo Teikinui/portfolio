@@ -26,7 +26,7 @@ function StateIcon({ name, size = 20 }) {
 export default function Menu() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('accueil');
-  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'dark');
+  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'light');
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -57,11 +57,12 @@ export default function Menu() {
   return (
     <header className={styles.header}>
       <div className={`${styles.bar} container`}>
-        <a className={styles.logo} href="#accueil" aria-label="Teikinui Decian, accueil" onClick={() => setOpen(false)}><span className={styles.monogram}>TD<span>.</span></span><span className={styles.wordmark}>Teikinui Decian<small>EPITECH Paris</small></span></a>
+        <a className={styles.logo} href="#accueil" onClick={() => setOpen(false)}><span className={styles.monogram}>TD<span>.</span></span><span className={styles.wordmark}>Teikinui Decian<small>EPITECH Paris</small></span></a>
         <nav id="main-navigation" className={`${styles.nav} ${open ? styles.open : ''}`} aria-label="Navigation principale">
           {links.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={active === id ? 'location' : undefined} onClick={() => setOpen(false)}>{label}</a>)}
         </nav>
         <div className={styles.controls}>
+          <a className={styles.cv} href={`${import.meta.env.BASE_URL}CV/CV_Teikinui_DECIAN_Cloud.pdf`} download="CV_Teikinui_DECIAN_Cloud.pdf">Mon CV <Icon name="download" size={16} /></a>
           <button className={styles.theme} type="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label={theme === 'dark' ? 'Activer le thème clair' : 'Activer le thème sombre'} title={theme === 'dark' ? 'Thème clair' : 'Thème sombre'}>
             <StateIcon name={theme === 'dark' ? 'sun' : 'moon'} />
           </button>

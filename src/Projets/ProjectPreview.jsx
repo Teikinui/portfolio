@@ -6,16 +6,15 @@ const logo = (name) => `${import.meta.env.BASE_URL}projects/infrastructure/${nam
 
 function JobBoardPreview({ href }) {
   return (
-    <a className={`${styles.frame} ${styles.jobboard}`} href={href} target="_blank" rel="noopener noreferrer"
-      aria-label="Voir le job board sur GitHub (nouvel onglet). Vue illustrative avec deux annonces du jeu de démonstration du dépôt.">
-      <div aria-hidden="true">
+    <a className={`${styles.frame} ${styles.jobboard}`} href={href} target="_blank" rel="noopener noreferrer">
+      <div>
         <div className={styles.browserBar}><span className={styles.brand}>tanière</span><span>Vue illustrative <Icon size={16} /></span></div>
         <div className={styles.board}>
           <div className={styles.boardTitle}>La recherche d’emploi,<br />au même endroit.</div>
           <div className={styles.search}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="10" cy="10" r="6" /><path d="m15 15 6 6" /></svg> Mot-clé, lieu, contrat</div>
           <div className={styles.offer}><span className={styles.initial}>A</span><div><strong>Développeur Full-Stack</strong><span>Acme Tech · Paris · CDI</span></div><Icon size={18} /></div>
           <div className={styles.offer}><span className={styles.initial}>A</span><div><strong>Stage Développeur Backend</strong><span>Acme Tech · Paris · Stage</span></div><Icon size={18} /></div>
-          <div className={styles.boardFooter}><span>Données de démonstration</span><span className={styles.application}>Voir le code <Icon size={14} /></span></div>
+          <div className={styles.boardFooter}><span>Données de démonstration</span><span className={styles.application}>Voir le code <Icon size={14} /><span className="sr-only"> du job board sur GitHub (nouvel onglet)</span></span></div>
         </div>
       </div>
     </a>
@@ -25,6 +24,15 @@ function JobBoardPreview({ href }) {
 function CloudPreview() {
   return (
     <div className={`${styles.frame} ${styles.cloud}`} role="img" aria-label="Schéma de principe : un navigateur accède aux sites et applications Docker via Cloudflare Zero Trust. Arcane supervise les conteneurs.">
+      <div className={styles.mobileSchema} aria-hidden="true">
+        <div className={styles.mobileTitle}>Un accès, une vérification.</div>
+        <div className={styles.mobileNode}><Icon name="monitor" /><span>Navigateur</span></div>
+        <div className={styles.mobileConnector} />
+        <div className={`${styles.mobileNode} ${styles.mobileGateway}`}><img src={logo('cloudflare')} width="28" height="28" alt="" /><span>Cloudflare Zero Trust</span></div>
+        <div className={styles.mobileConnector} />
+        <div className={styles.mobileNode}><img src={logo('docker')} width="28" height="28" alt="" /><span>Docker<small>Sites web · Applications</small></span></div>
+        <p className={styles.mobileNote}>Arcane · supervision des conteneurs</p>
+      </div>
       <svg className={styles.schema} viewBox="0 0 480 320" fill="none" aria-hidden="true" focusable="false">
         <text x="28" y="38" className={styles.diagramTitle}>Un accès, une vérification.</text>
         <path d="M100 155H158M272 155H324" className={styles.route} />
@@ -55,6 +63,17 @@ function CloudPreview() {
 function NasPreview() {
   return (
     <div className={`${styles.frame} ${styles.nas}`} role="img" aria-label="Schéma de principe : un ordinateur distant rejoint le NAS personnel par un tunnel WireGuard. WireGuard est exécuté dans Docker sur le NAS, qui héberge les services.">
+      <div className={styles.mobileSchema} aria-hidden="true">
+        <div className={styles.mobileTitle}>Chez soi, même à distance.</div>
+        <div className={styles.mobileNode}><Icon name="monitor" /><span>À distance</span></div>
+        <div className={styles.mobileTunnel}><Icon name="shield" size={18} /><span>Tunnel chiffré</span></div>
+        <div className={styles.mobileHost}>
+          <strong>NAS personnel</strong>
+          <div className={styles.mobileNode}><img src={logo('docker')} width="28" height="28" alt="" /><span>Docker</span></div>
+          <div className={styles.mobileWireguard}><img src={logo('wireguard')} width="24" height="24" alt="" /><span>WireGuard</span></div>
+          <p className={styles.mobileNote}>Services auto-hébergés</p>
+        </div>
+      </div>
       <svg className={styles.schema} viewBox="0 0 480 320" fill="none" aria-hidden="true" focusable="false">
         <text x="28" y="38" className={styles.diagramTitle}>Chez soi, même à distance.</text>
         <rect x="30" y="123" width="82" height="59" rx="5" className={styles.device} />
@@ -82,30 +101,30 @@ function NasPreview() {
   );
 }
 
-function CandidaturesPreview() {
+function CandidaturesPreview({ priority }) {
   const base = `${import.meta.env.BASE_URL}projects/candidatures/`;
   return (
     <a className={`${styles.frame} ${styles.screenshot}`} href={`${base}interface-complete.png`}
       target="_blank" rel="noopener noreferrer"
-      aria-label="Agrandir la capture réelle de Candidatures (nouvel onglet), avec des données fictives">
+      >
       <span className={styles.captureToolbar}>
         <span>Capture réelle · Données fictives</span>
-        <span className={styles.enlarge}>Agrandir <Icon size={18} /></span>
+        <span className={styles.enlarge}>Agrandir <Icon size={18} /><span className="sr-only"> (nouvel onglet)</span></span>
       </span>
       <img className={styles.captureImage} src={`${base}interface-kanban.jpg`}
         alt="Interface Kanban de Candidatures : recherche, filtres et cinq colonnes de suivi, de À postuler à Refusé."
-        width="1440" height="900" loading="lazy" decoding="async" />
+        width="1440" height="900" loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} decoding="async" />
     </a>
   );
 }
 
-export default function ProjectPreview({ project }) {
+export default function ProjectPreview({ project, priority = false }) {
   switch (project.preview) {
     case 'jobboard': return <JobBoardPreview href={project.github} />;
     case 'cloud': return <CloudPreview />;
     case 'nas': return <NasPreview />;
     case 'triptrap': return <TripTrapPreview href={project.github} />;
-    case 'candidatures': return <CandidaturesPreview />;
+    case 'candidatures': return <CandidaturesPreview priority={priority} />;
     default: return null;
   }
 }

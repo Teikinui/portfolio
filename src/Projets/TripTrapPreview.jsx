@@ -5,8 +5,7 @@ const asset = (name) => `${import.meta.env.BASE_URL}projects/triptrap/${name}.pn
 
 export default function TripTrapPreview({ href }) {
   return (
-    <a className={styles.preview} href={href} target="_blank" rel="noopener noreferrer"
-      aria-label="Découvrir TripTrap sur GitHub (nouvel onglet) : illustration du niveau Tahiti avec les sprites du jeu">
+    <a className={styles.preview} href={href} target="_blank" rel="noopener noreferrer">
       {/* Composition illustrative à partir des sprites réels, pas une capture de partie. */}
       <div className={styles.artwork} aria-hidden="true">
         <svg className={styles.scene} viewBox="0 0 480 300" fill="none" focusable="false">
@@ -28,9 +27,10 @@ export default function TripTrapPreview({ href }) {
           <image href={asset('starfish')} x="390" y="210" width="48" height="48" />
         </svg>
       </div>
-      <div className={styles.heading} aria-hidden="true">
+      <div className={styles.heading}>
         <span className={styles.title}>TripTrap<span className={styles.location}>Tahiti</span></span>
         <span className={styles.arrow}><Icon size={20} /></span>
+        <span className="sr-only">Illustration avec les sprites du jeu ; voir le code sur GitHub (nouvel onglet)</span>
       </div>
     </a>
   );
