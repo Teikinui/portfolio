@@ -41,6 +41,8 @@ test('Projets, ancres et ressources conservées', async ({ page, request }) => {
   await page.goto('./');
   await expect(page.getByRole('group', { name: 'Filtrer les projets par technologie' })).toHaveCount(0);
   await expect(page.locator('#projets article')).toHaveCount(5);
+  await expect(page.getByText('Démo non publique')).toHaveCount(0);
+  await expect(page.getByText('Dépôt non renseigné')).toHaveCount(0);
   await page.getByRole('link', { name: 'Voir mes projets', exact: true }).click();
   await expect(page.locator('#projets article')).toHaveCount(5);
   await expect(page.locator('#projets')).toBeInViewport();

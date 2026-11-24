@@ -12,10 +12,12 @@ function ProjectCard({ project }) {
         <p className={styles.type}>{project.type}</p>
         <p className={styles.description}>{project.description}</p>
         <ul className="badges" aria-label="Technologies">{project.technologies.map((tech) => <li key={tech}>{tech}</li>)}</ul>
-        <div className={styles.links}>
-          {project.demo ? <a className="text-link" href={project.demo} target="_blank" rel="noopener noreferrer">Voir la démo <Icon size={16} /></a> : <span>Démo non publique</span>}
-          {project.github ? <a className="text-link" href={project.github} target="_blank" rel="noopener noreferrer">GitHub <Icon size={16} /></a> : <span>Dépôt non renseigné</span>}
-        </div>
+        {(project.demo || project.github) && (
+          <div className={styles.links}>
+            {project.demo && <a className="text-link" href={project.demo} target="_blank" rel="noopener noreferrer">Voir la démo <Icon size={16} /></a>}
+            {project.github && <a className="text-link" href={project.github} target="_blank" rel="noopener noreferrer">GitHub <Icon size={16} /></a>}
+          </div>
+        )}
       </div>
       <ProjectPreview project={project} />
     </article>
