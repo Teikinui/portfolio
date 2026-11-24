@@ -4,8 +4,6 @@ import { projects } from '../data/projects';
 import styles from './Projets.module.css';
 import ProjectPreview from './ProjectPreview';
 
-const filters = ['Tous', ...new Set(projects.flatMap((project) => project.technologies))];
-
 function ProjectCard({ project }) {
   return (
     <article tabIndex={-1} id={`projet-${project.number}`} className={`${styles.project} ${project.preview === 'candidatures' ? styles.featured : ''}`} aria-labelledby={`projet-${project.number}-title`}>
@@ -24,15 +22,10 @@ function ProjectCard({ project }) {
   );
 }
 
-export default function Projets({ filter, onFilterChange }) {
-  const visible = projects.filter((project) => filter === 'Tous' || project.technologies.includes(filter));
+export default function Projets() {
   return (
-    <Section id="projets" eyebrow="01 / Expérimenter & construire" title="Projets" intro="Projets personnels et académiques autour du cloud, du développement et des infrastructures.">
-      <div className={styles.filters} role="group" aria-label="Filtrer les projets par technologie">
-        {filters.map((tech) => <button key={tech} type="button" aria-pressed={filter === tech} onClick={() => onFilterChange(tech)}>{tech}</button>)}
-      </div>
-      <p className="sr-only" role="status">{visible.length} projet{visible.length > 1 ? 's' : ''} affiché{visible.length > 1 ? 's' : ''}</p>
-      <div className={styles.projects}>{visible.map((project) => <ProjectCard key={project.number} project={project} />)}</div>
+    <Section id="projets" eyebrow="01 / Expérimenter & construire" title="Projets">
+      <div className={styles.projects}>{projects.map((project) => <ProjectCard key={project.number} project={project} />)}</div>
     </Section>
   );
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { domAnimation, LazyMotion, MotionConfig } from 'framer-motion';
 import Accueil from './Accueil/Accueil';
@@ -12,7 +12,6 @@ import './App.css';
 
 function Portfolio() {
   const { hash } = useLocation();
-  const [projectFilter, setProjectFilter] = useState('Tous');
   useEffect(() => {
     if (!hash) return;
     const section = document.getElementById(hash.slice(1));
@@ -25,8 +24,8 @@ function Portfolio() {
       <a className="skip-link" href="#contenu">Aller au contenu</a>
       <Menu />
       <main id="contenu" tabIndex={-1}>
-        <Accueil onProjectSelect={() => setProjectFilter('Tous')} />
-        <Projets filter={projectFilter} onFilterChange={setProjectFilter} />
+        <Accueil />
+        <Projets />
         <Competences />
         <Parcours />
         <Contact />

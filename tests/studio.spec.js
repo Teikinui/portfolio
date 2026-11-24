@@ -37,10 +37,10 @@ for (const theme of ['light', 'dark']) {
   });
 }
 
-test('Filtres, ancres et ressources conservées', async ({ page, request }) => {
+test('Projets, ancres et ressources conservées', async ({ page, request }) => {
   await page.goto('./');
-  await page.getByRole('button', { name: 'Docker', exact: true }).click();
-  await expect(page.locator('#projets article')).toHaveCount(3);
+  await expect(page.getByRole('group', { name: 'Filtrer les projets par technologie' })).toHaveCount(0);
+  await expect(page.locator('#projets article')).toHaveCount(5);
   await page.getByRole('link', { name: 'Voir mes projets', exact: true }).click();
   await expect(page.locator('#projets article')).toHaveCount(5);
   await expect(page.locator('#projets')).toBeInViewport();

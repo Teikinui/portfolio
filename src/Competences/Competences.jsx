@@ -22,7 +22,7 @@ const categories = [
 
 export default function Competences() {
   return (
-    <Section id="competences" eyebrow="02 / Savoir-faire" title="Mes compétences" intro="Des bases techniques acquises en formation et sur le terrain, que je continue à approfondir.">
+    <Section id="competences" eyebrow="02 / Savoir-faire" title="Mes compétences">
       <div className={styles.categories}>
         {categories.map((category) => <div className={styles.category} key={category.title}>
           <div className={styles.title}><h3>{category.title}</h3></div>

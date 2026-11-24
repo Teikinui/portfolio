@@ -34,7 +34,7 @@ const experiences = [
 
 export default function Parcours() {
   return (
-    <Section id="experience" eyebrow="03 / Expériences & formation" title="Mon parcours" intro="Du support aux infrastructures sécurisées, apprendre en faisant.">
+    <Section id="experience" eyebrow="03 / Expériences & formation" title="Mon parcours">
           <div className={styles.timeline}>
             {experiences.map((experience) => (
               <article className={styles.item} key={experience.role}>

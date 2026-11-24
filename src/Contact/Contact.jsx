@@ -50,10 +50,10 @@ export default function Contact() {
   }
 
   return (
-    <Section id="contact" eyebrow="04 / Échangeons" title="Un projet, une opportunité ?" intro="Je suis ouvert aux échanges autour du cloud, des infrastructures et des systèmes.">
+    <Section id="contact" eyebrow="04 / Échangeons" title="Un projet, une opportunité ?">
       <div className={styles.layout}>
         <div className={styles.profile}>
-          <p className={styles.note}>À la recherche d’une alternance en infrastructure cloud à partir de <strong>janvier 2027</strong> (2 à 3 ans), avec un objectif d’évolution vers l’architecture cloud.</p>
+          <p className={styles.note}>À la recherche d’une alternance en infrastructure cloud à partir de <strong>janvier 2027</strong> (<span className={styles.noBreak}>2 à 3 ans</span>), avec un objectif d’évolution vers l’architecture cloud.</p>
           <div className={styles.links}>
             <a href="mailto:teikinui.decian@gmail.com">teikinui.decian@gmail.com <Icon /></a>
             <a href="https://www.linkedin.com/in/teikinui-decian" target="_blank" rel="noopener noreferrer">Mon profil LinkedIn <Icon /><span className="sr-only"> (nouvel onglet)</span></a>
